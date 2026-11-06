@@ -355,10 +355,10 @@ h1,h2,h3{word-break:auto-phrase;text-wrap:balance}
 
 /* 活動卡片標題置中、不亂斷行 */
 .ev-sec>.ev-tag{display:table;margin:1.2rem auto .6rem}
-.ev-sec h2{text-align:center;border-bottom:0;padding-bottom:0;margin-bottom:.6rem}
+.ev-sec h2{text-align:start;border-bottom:0;padding-bottom:0;margin-bottom:.6rem}
 .ev-sec h2 span{display:inline-block}
 .ev-sec h2 .ev-sub{display:block;margin-top:.15em;font-size:.78em;color:var(--leaf)}
-.ev-sec>.lead{text-align:center}
+.ev-sec>.lead{text-align:start}
 
 /* 手機：整體字級縮小 */
 @media (max-width:560px){

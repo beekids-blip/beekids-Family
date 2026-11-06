@@ -10,7 +10,9 @@
     { t: '首頁', p: 'index.html' },
     { t: '認識 Bee Kids', p: 'parents/about.html' },
     { t: '主日學資訊', p: 'parents/info.html' },
-    { t: '家長須知', p: 'parents/faq.html' },  ];
+    { t: '家長須知', p: 'parents/faq.html' },
+    { t: '精彩活動', p: 'parents/events.html' },
+  ];
   
 
 

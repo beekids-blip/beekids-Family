@@ -319,3 +319,7 @@ h3{font-size:1.25rem;font-weight:700;margin:2.2rem 0 .6rem;color:var(--leaf)}
 .class-cards .age{display:inline-block;margin:0 0 .8rem;padding:2px 14px;border-radius:999px;background:var(--honey-soft);color:var(--garden-deep);font-weight:700;font-size:.95rem}
 .class-cards .desc{margin:0;color:var(--ink);line-height:1.8}
 @media (max-width:640px){.class-cards{grid-template-columns:1fr}}
+
+/* 意象區：LOGO + 文字，兩欄置中 */
+.split.has-logo.two{grid-template-columns:auto minmax(0,26rem);justify-content:center;align-items:center;gap:32px}
+@media (max-width:760px){.split.has-logo.two{grid-template-columns:1fr}}

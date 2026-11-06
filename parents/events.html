@@ -20,7 +20,7 @@
 
 <!-- ========== 聖誕節 ========== -->
 <section class="ev-sec" id="xmas">
-  <figure class="ev-hero"><span>聖誕節主視覺 16:9</span><img src="../assets/img/events/xmas.jpg" alt="2026 聖誕節 Bee Day 主視覺" onerror="this.remove()"></figure>
+  <figure class="ev-hero"><span>聖誕節主視覺 16:9</span><img src="../assets/img/events/聖誕主視覺.jpg" alt="2026 聖誕節 Bee Day 主視覺" onerror="this.remove()"></figure>
   <span class="ev-tag">Bee Day</span>
   <h2>2026 聖誕節 Bee Day</h2>
   <p class="lead">一起享受歡樂、溫暖的聖誕節，並認識耶穌是神賜給每個孩子最珍貴的禮物。</p>
@@ -31,9 +31,6 @@
     <li>透過兩週的主題活動，讓孩子認識聖誕節的故事，知道聖誕節是慶祝耶穌降生的日子。</li>
     <li>引導孩子認識耶穌是神賜給每個孩子最珍貴的禮物。</li>
   </ul>
-
-  <h3>主題經文</h3>
-  <p class="quote">神愛世人，甚至將他的獨生子賜給他們。<br><small>約翰福音 3:16</small></p>
 
   <h3>活動資訊</h3>
   <dl class="facts">
@@ -47,7 +44,7 @@
 
 <!-- ========== 寒假營會 ========== -->
 <section class="ev-sec" id="camp">
-  <figure class="ev-hero"><span>營會主視覺 16:9</span><img src="../assets/img/events/camp.jpg" alt="2027 寒假兒童營會 Emoji 電力公司 主視覺" onerror="this.remove()"></figure>
+  <figure class="ev-hero"><span>營會主視覺 16:9</span><img src="../assets/img/events/營會主視覺.png" alt="2027 寒假兒童營會 Emoji 電力公司 主視覺" onerror="this.remove()"></figure>
   <span class="ev-tag">報名中</span>
   <h2>2027 寒假兒童營會《Emoji 電力公司》情緒管理營</h2>
   <p class="lead">各位小怪獸們，歡迎來到 Emoji 電力公司！我們發電的原料，就是你心中的波濤駭浪。</p>
@@ -55,19 +52,6 @@
 
   <h3>課程介紹</h3>
   <p>每個孩子心中都有一隻百變怪，會隨著情緒變大變小。牠每天的工作，就是把心中的情緒燃料分類、辨識與處理，再放進發電機。這次的訓練營，要好好訓練你的百變怪，成為合格的電力公司成員，為世界持續發電！</p>
-
-  <h3>課程主題</h3>
-  <div class="ev-days">
-    <div class="ev-day"><h4>第一天　2/1（一）</h4>
-      <p>早上</p><ul><li>情緒是什麼《解鎖 Emoji 燃料庫》</li><li>發現情緒《輸送帶上的燃料》</li></ul>
-      <p>下午</p><ul><li>《認識公司老闆》</li><li>《尋找隱藏燃料》</li></ul></div>
-    <div class="ev-day"><h4>第二天　2/2（二）</h4>
-      <p>早上</p><ul><li>想法轉換《發電廠紅綠燈》</li><li>情緒調節《啟動冷卻系統》</li></ul>
-      <p>下午</p><ul><li>《失控的情緒怪獸》</li><li>《電廠防爆計畫》</li></ul></div>
-    <div class="ev-day"><h4>第三天　2/3（三）</h4>
-      <p>早上</p><ul><li>自己的情緒《打包情緒帶著走》</li><li>別人的情緒《外帶情緒電源》</li></ul>
-      <p>下午</p><ul><li>《有誰需要電》</li></ul></div>
-  </div>
 
   <h3>活動資訊</h3>
   <dl class="facts">
@@ -84,17 +68,19 @@
   </div>
   <p>本活動繳交完費用才算報名完成，並保留名額。<br>參與〈我的情緒百變怪〉還可獲得 100 元折價！</p>
   <p><a class="btn solid" href="#" target="_blank" rel="noopener">我要報名（連結待填）</a></p>
-
-  <h3>員工家屬行前說明會</h3>
-  <div class="callout"><p>為了讓孩子能在家練習訓練內容，我們誠摯邀請家長參加說明會，會說明訓練內容，也讓您快速了解如何理解孩子的情緒怪獸。</p></div>
-  <dl class="facts">
-    <dt>日期</dt><dd>2027/1/31（日）</dd>
-    <dt>時間</dt><dd>13:30–15:00</dd>
-    <dt>地點</dt><dd>真道教會 R 樓（台北市萬華區中華路一段 114 號 R 樓）</dd>
-  </dl>
 </section>
 
 </article>
 </main>
+
+<button type="button" class="to-top" aria-label="回到最上面" title="回到最上面">↑</button>
+<script>
+(() => {
+  const b = document.querySelector('.to-top');
+  b.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  const t = () => b.classList.toggle('show', window.scrollY > 400);
+  addEventListener('scroll', t, { passive: true }); t();
+})();
+</script>
 </body>
 </html>

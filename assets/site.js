@@ -11,8 +11,8 @@
     { t: '認識 Bee Kids', p: 'parents/about.html' },
     { t: '主日學資訊', p: 'parents/info.html' },
     { t: '家長須知', p: 'parents/faq.html' },
-    { t: '年度行事曆', p: 'parents/calendar.html' },
-    { t: '聯絡我們', p: 'parents/contact.html' },
+    { t: '年度行事曆', p: '' },
+    { t: '聯絡我們', p: '' },
   ];
 
   const ROOT = new URL('../', document.currentScript.src);

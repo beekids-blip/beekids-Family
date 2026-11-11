@@ -379,3 +379,7 @@ h1,h2,h3{word-break:auto-phrase;text-wrap:balance}
   .class-cards .card{padding:20px}
   .ev-nav a{padding:6px 14px;font-size:.92rem}
 }
+
+/* 活動頁按鈕並排 */
+.btn-group{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.btn-group .btn{flex:1 1 0;min-width:max-content;text-align:center}

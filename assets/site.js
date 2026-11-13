@@ -96,7 +96,7 @@ document.querySelectorAll('[data-children]').forEach(el => {
   // Footer
   document.body.insertAdjacentHTML('beforeend',
     `<footer class="site-footer"><div>
-       <span>Bee Kids｜財團法人基督教台北真道教會</span>
+       <span>Bee Kids｜真道教會</span>
        <a href="mailto:beekids@truth.org.tw">beekids@truth.org.tw</a>
      </div></footer>`);
 })();

@@ -384,3 +384,16 @@ h1,h2,h3{word-break:auto-phrase;text-wrap:balance}
 .btn-group{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
 .btn-group .btn{flex:1 1 0;min-width:max-content;text-align:center}
 @media (max-width:640px){.btn-group .btn:first-child{flex:1 1 100%}}
+
+
+/* ---------- 基本資訊＋方塊 ---------- */
+.info-split{display:grid;grid-template-columns:minmax(240px,.85fr) 1.6fr;gap:24px 32px;align-items:start;margin:1.4rem 0}
+.info-split h3{margin:0 0 .5rem;font-size:1.1rem}
+.info-split .facts{margin:0;gap:8px 14px}
+.info-split .nw{white-space:nowrap}
+.info-split .links.row{margin:0;grid-template-columns:repeat(3,1fr);gap:10px}
+.info-split .links.row a{padding:14px 12px}
+@media (max-width:760px){
+  .info-split{grid-template-columns:1fr}
+  .info-split .links.row{grid-template-columns:1fr 1fr;gap:8px}
+  .info-split .links.row li:first-child{grid-column:1/-1}}

@@ -423,7 +423,16 @@ h1,h2,h3{word-break:auto-phrase;text-wrap:balance}
 .ev-dots button[aria-current="true"]{background:var(--honey);width:24px;border-radius:999px}
 .ev-more{text-align:right;margin:.4rem 0 0}
 @media (max-width:760px){
-  .ev-slide{grid-template-columns:1fr}
+  .ev-slide{grid-template-columns:minmax(0,1fr)}
   .ev-body{padding:20px 20px 40px}
   .ev-nav-btn{top:calc((100vw - 48px) * 9 / 32)}  /* 按鈕貼在圖片垂直中間 */
   .ev-dots{left:20px;right:auto}}
+
+/* 內容太長不換行，超出用 … 截斷 */
+.ev-slide{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr)}  /* 讓欄位能被壓縮，不會被長文字撐開 */
+.ev-body{min-width:0}
+.ev-body h3,
+.ev-s,
+.ev-body .facts dd{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ev-body .facts{grid-template-columns:max-content minmax(0,1fr)}
+.ev-body .facts dt{white-space:nowrap}

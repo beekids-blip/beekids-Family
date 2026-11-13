@@ -391,9 +391,8 @@ h1,h2,h3{word-break:auto-phrase;text-wrap:balance}
 .info-split h3{margin:0 0 .5rem;font-size:1.1rem}
 .info-split .facts{margin:0;gap:8px 14px}
 .info-split .nw{white-space:nowrap}
-.info-split .links.row{margin:0;grid-template-columns:repeat(3,1fr);gap:10px}
-.info-split .links.row a{padding:14px 12px}
+.info-split .links.row{margin:0;grid-template-columns:1fr;gap:10px}
+.info-split .links.row a{padding:12px 16px}
 @media (max-width:760px){
   .info-split{grid-template-columns:1fr}
-  .info-split .links.row{grid-template-columns:1fr 1fr;gap:8px}
-  .info-split .links.row li:first-child{grid-column:1/-1}}
+}

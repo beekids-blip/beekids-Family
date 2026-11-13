@@ -400,3 +400,30 @@ h1,h2,h3{word-break:auto-phrase;text-wrap:balance}
   .info-split .links.row li:first-child{grid-column:1/-1}
   .info-split .links.row a{flex-direction:column;align-items:flex-start;gap:2px;white-space:normal;padding:10px 12px}
 }
+
+/* ---------- Events carousel (home) ---------- */
+.ev-car{position:relative;margin:1.2rem 0 .6rem}
+.ev-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;border-radius:16px;border:1px solid var(--line);background:#fff}
+.ev-track::-webkit-scrollbar{display:none}
+.ev-slide{flex:0 0 100%;scroll-snap-align:start;display:grid;grid-template-columns:1.15fr 1fr;color:var(--ink);text-decoration:none}
+.ev-slide figure{margin:0;background:var(--mist);min-height:220px}
+.ev-slide img{display:block;width:100%;height:100%;aspect-ratio:16/9;object-fit:cover}
+.ev-body{padding:28px 32px 44px;display:flex;flex-direction:column;justify-content:center;gap:6px}
+.ev-chip{align-self:flex-start;background:var(--honey);color:var(--garden-deep);font-weight:700;font-size:.8rem;line-height:1;padding:6px 12px;border-radius:999px}
+.ev-body h3{margin:.3rem 0 0;font-size:1.35rem;line-height:1.4;color:var(--garden)}
+.ev-s{margin:0;color:var(--muted);font-weight:500}
+.ev-body .facts{margin:.6rem 0 0;font-size:.95rem;gap:2px 16px}
+.ev-go{margin-top:.6rem;font-weight:700;color:var(--leaf)}
+.ev-slide:hover .ev-go{text-decoration:underline}
+.ev-nav-btn{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border:0;border-radius:50%;background:rgba(255,255,255,.92);color:var(--garden);font-size:1.6rem;line-height:1;cursor:pointer;box-shadow:0 2px 8px rgba(20,53,40,.25)}
+.ev-nav-btn:hover{background:var(--honey)}
+.ev-nav-btn.prev{left:10px}.ev-nav-btn.next{right:10px}
+.ev-dots{position:absolute;right:20px;bottom:12px;display:flex;gap:8px}
+.ev-dots button{width:10px;height:10px;padding:0;border:0;border-radius:50%;background:var(--line);cursor:pointer}
+.ev-dots button[aria-current="true"]{background:var(--honey);width:24px;border-radius:999px}
+.ev-more{text-align:right;margin:.4rem 0 0}
+@media (max-width:760px){
+  .ev-slide{grid-template-columns:1fr}
+  .ev-body{padding:20px 20px 40px}
+  .ev-nav-btn{top:calc((100vw - 48px) * 9 / 32)}  /* 按鈕貼在圖片垂直中間 */
+  .ev-dots{left:20px;right:auto}}

@@ -436,3 +436,15 @@ h1,h2,h3{word-break:auto-phrase;text-wrap:balance}
 .ev-body .facts dd{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .ev-body .facts{grid-template-columns:max-content minmax(0,1fr)}
 .ev-body .facts dt{white-space:nowrap}
+
+/* 資訊頁分成文字圖片 */
+.info-layout {display: grid;grid-template-columns: 1fr 1fr;gap: 32px;align-items: center;}
+.info-content {text-align: left;}
+.info-content h2 {text-align: left;margin-bottom: 20px;}
+.facts {display: grid;grid-template-columns: 80px 1fr;gap: 14px 12px;text-align: left;margin: 0;}
+.facts dt {font-weight: 600;}
+.facts dd {margin: 0;line-height: 1.7;}
+.info-image img {width: 100%;aspect-ratio: 4 / 3;object-fit: cover;border-radius: 16px;display: block;}
+
+/* 手機版改為上下排列 */
+@media (max-width: 768px) {.info-layout {grid-template-columns: 1fr;gap: 24px;}}

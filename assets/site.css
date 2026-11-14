@@ -437,14 +437,10 @@ h1,h2,h3{word-break:auto-phrase;text-wrap:balance}
 .ev-body .facts{grid-template-columns:max-content minmax(0,1fr)}
 .ev-body .facts dt{white-space:nowrap}
 
-/* 資訊頁分成文字圖片 */
-.info-layout {display: grid;grid-template-columns: 1fr 1fr;gap: 32px;align-items: center;}
-.info-content {text-align: left;}
-.info-content h2 {text-align: left;margin-bottom: 20px;}
-.facts {display: grid;grid-template-columns: 80px 1fr;gap: 14px 12px;text-align: left;margin: 0;}
-.facts dt {font-weight: 600;}
-.facts dd {margin: 0;line-height: 1.7;}
-.info-image img {width: 100%;aspect-ratio: 4 / 3;object-fit: cover;border-radius: 16px;display: block;}
+.info-with-photo {display: flex;align-items: center;   /* 照片與文字垂直置中 */gap: 20px;}
+.info-photo {width: 220px;aspect-ratio: 4 / 3;object-fit: cover;     /* 照片不變形、自動裁切 */border-radius: 12px;flex-shrink: 0;}
 
-/* 手機版改為上下排列 */
-@media (max-width: 768px) {.info-layout {grid-template-columns: 1fr;gap: 24px;}}
+/* 手機：照片放上面，文字在下面 */
+@media (max-width: 600px) {
+.info-with-photo {flex-direction: column;align-items: stretch;}
+.info-photo {width: 100%;}}

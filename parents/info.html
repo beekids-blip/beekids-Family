@@ -6,6 +6,39 @@
 <title>主日學資訊｜Bee Kids</title>
 <link rel="stylesheet" href="../assets/site.css">
 <script defer src="../assets/site.js"></script>
+<style>
+  /* 地圖與按鈕的右側容器 */
+  .map-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  /* 確保圖片在容器內維持原本的響應式寬度 */
+  .map-container .info-photo {
+    width: 100%;
+  }
+  /* Google 地圖按鈕樣式 */
+  .map-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 18px;
+    background-color: #f59e0b; /* 溫暖的蜜蜂金黃色，可依 site.css 主色調整 */
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 999px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+    transition: background-color 0.2s, transform 0.15s;
+  }
+  .map-btn:hover {
+    background-color: #d97706;
+    transform: translateY(-1px);
+  }
+</style>
 </head>
 <body>
 <main id="main" class="page no-toc">
@@ -21,9 +54,16 @@
     <dt>捷運</dt><dd>捷運西門站 六號出口</dd>
     <dt>對象</dt><dd>幼兒班 3–6 歲｜小學班 7–12 歲</dd>
   </dl>
-    <img src="../assets/img/地圖.png" alt="loading..." class="info-photo">
-
+  
+  <!-- 用 map-container 把圖片和按鈕包在一起，保持原本 info-with-photo 的左右雙欄結構 -->
+  <div class="map-container">
+    <img src="../assets/img/地圖.png" alt="真道教會交通位置地圖" class="info-photo">
+    <a href="https://maps.app.goo.gl/uh5dtWUkNuHYH3hj7" target="_blank" rel="noopener noreferrer" class="map-btn">
+      📍 開啟 Google 地圖導航
+    </a>
+  </div>
 </div>
+
 <h2>第一次來，怎麼進行</h2>
 <ol class="steps">
   <li>到報到處，告訴老師孩子的名字</li>

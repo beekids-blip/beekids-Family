@@ -39,6 +39,39 @@
     color: #ffffff !important;
     transform: translateY(-1px);
   }
+  <style>
+  .map-wrap {
+    position: relative;
+  }
+  .map-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: inherit; /* 繼承原本地圖的圓角設定 */
+  }
+  .map-corner-btn {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 5px 11px;
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #1f2937 !important;
+    text-decoration: none !important;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    transition: background-color 0.2s, transform 0.15s;
+  }
+  .map-corner-btn:hover {
+    background-color: #f59e0b;
+    color: #ffffff !important;
+    transform: translateY(-1px);
+  }
 </style>
 </head>
 <body>
@@ -56,8 +89,8 @@
     <dt>對象</dt><dd>幼兒班 3–6 歲｜小學班 7–12 歲</dd>
   </dl>
   
-  <div class="map-wrap">
-    <img src="../assets/img/地圖.png" alt="loading..." class="info-photo">
+  <div class="info-photo map-wrap">
+    <img src="../assets/img/地圖.png" alt="loading...">
     <a href="https://maps.app.goo.gl/uh5dtWUkNuHYH3hj7" target="_blank" rel="noopener noreferrer" class="map-corner-btn">
       📍 Google 地圖
     </a>

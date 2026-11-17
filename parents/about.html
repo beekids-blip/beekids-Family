@@ -7,30 +7,30 @@
 <link rel="stylesheet" href="../assets/site.css">
 <script defer src="../assets/site.js"></script>
 <style>
-  /* 圖文並排區塊樣式：強制消除標題與圖片的預設 margin-top，確保頂端對齊 */
-  .prose .feature-row {
-    display: flex;
-    align-items: flex-start;
-    gap: 28px;
-    margin: 36px 0;
-  }
-  /* 偶數區塊反轉方向（變成左圖右文） */
-  .prose .feature-row.reverse {
-    flex-direction: row-reverse;
-  }
-  .prose .feature-text {
-    flex: 1.2;
-    margin-top: 0 !important;
-  }
-  .prose .feature-text h2 {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-    line-height: 1.3;
-  }
-  .prose .feature-image {
-    flex: 1;
-    margin-top: 4px !important; /* 微調 4px 補償文字行高留白，讓照片上緣不超過標題文字 */
-  }
+ .prose .feature-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 28px;
+  margin: 36px 0;
+}
+
+.prose .feature-text {
+  flex: 1.2;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.prose .feature-text h2 {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  line-height: 1.3;
+}
+
+.prose .feature-image {
+  flex: 1;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
   .prose .feature-image img {
     width: 100%;
     height: 240px;

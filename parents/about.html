@@ -7,79 +7,30 @@
 <link rel="stylesheet" href="../assets/site.css">
 <script defer src="../assets/site.js"></script>
 <style>
+  
   /* 圖文並排區塊樣式 */
-  .feature-row {
-    display: flex;
-    align-items: center;
-    gap: 28px;
-    margin: 36px 0;
-  }
+  .feature-row {display: flex;align-items: center;gap: 28px;margin: 36px 0;}
   /* 偶數區塊反轉方向（變成左圖右文） */
-  .feature-row.reverse {
-    flex-direction: row-reverse;
-  }
-  .feature-text {
-    flex: 1.2; /* 文字區塊稍微寬一點 */
-  }
-  .feature-text h2 {
-    margin-top: 0; /* 避免標題上方多餘留白影響對齊 */
-  }
-  .feature-image {
-    flex: 1;
-  }
-  .feature-image img {
-    width: 100%;
-    height: 260px;
-    object-fit: cover;
-    border-radius: 12px;
-    display: block;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  }
+  .feature-row.reverse { flex-direction: row-reverse;}
+  .feature-text {flex: 1.2; /* 文字區塊稍微寬一點 */}
+  .feature-text h2 {margin-top: 0; /* 避免標題上方多餘留白影響對齊 */}
+  .feature-image {flex: 1;}
+  .feature-image img {width: 100%;height: 260px;object-fit: cover;border-radius: 12px;display: block;box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);}
 
   /* 6B 核心價值區塊（因為蜂巢圖示較寬，建議採上方標題+圖片並排，下方接六角形） */
-  .core-header-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
-    margin-top: 36px;
-    margin-bottom: 16px;
-  }
-  .core-header-text {
-    flex: 1;
-  }
-  .core-header-text h2 {
-    margin-top: 0;
-  }
-  .core-header-image {
-    flex: 1;
-    max-width: 380px;
-  }
-  .core-header-image img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 12px;
-    display: block;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  }
+  .core-header-row {display: flex;align-items: center;justify-content: space-between;gap: 24px;margin-top: 36px;margin-bottom: 16px;}
+  .core-header-text {flex: 1;}
+  .core-header-text h2 {margin-top: 0;}
+  .core-header-image {flex: 1;max-width: 380px;}
+  .core-header-image img {width: 100%;height: 180px;object-fit: cover;border-radius: 12px;display: block;box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);}
 
-  /* 手機版自動改為上下堆疊，避免畫面太擠 */
+/* 手機版自動改為上下堆疊，避免畫面太擠 */
   @media (max-width: 768px) {
-    .feature-row,
-    .feature-row.reverse,
-    .core-header-row {
-      flex-direction: column;
-      gap: 16px;
-    }
-    .core-header-image {
-      max-width: 100%;
-      width: 100%;
-    }
-    .feature-image img {
-      height: 220px;
-    }
-  }
+  .feature-row,.feature-row.reverse,
+  .core-header-row {flex-direction: column;gap: 16px;}
+  .core-header-image {max-width: 100%;width: 100%;}
+  .feature-image img {height: 220px;}}
+
 </style>
 </head>
 <body>

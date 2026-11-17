@@ -7,30 +7,91 @@
 <link rel="stylesheet" href="../assets/site.css">
 <script defer src="../assets/site.js"></script>
 <style>
-  
-  /* 圖文並排區塊樣式 */
-  .feature-row {display: flex;align-items: center;gap: 28px;margin: 36px 0;}
+  /* 圖文並排區塊樣式：改為 flex-start 讓圖片頂端與標題對齊，不超過標題 */
+  .feature-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 28px;
+    margin: 36px 0;
+  }
   /* 偶數區塊反轉方向（變成左圖右文） */
-  .feature-row.reverse { flex-direction: row-reverse;}
-  .feature-text {flex: 1.2; /* 文字區塊稍微寬一點 */}
-  .feature-text h2 {margin-top: 0; /* 避免標題上方多餘留白影響對齊 */}
-  .feature-image {flex: 1;}
-  .feature-image img {width: 100%;height: 260px;object-fit: cover;border-radius: 12px;display: block;box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);}
+  .feature-row.reverse {
+    flex-direction: row-reverse;
+  }
+  .feature-text {
+    flex: 1.2;
+  }
+  .feature-text h2 {
+    margin-top: 0;
+    line-height: 1.3;
+  }
+  .feature-image {
+    flex: 1;
+  }
+  .feature-image img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
 
-  /* 6B 核心價值區塊（因為蜂巢圖示較寬，建議採上方標題+圖片並排，下方接六角形） */
-  .core-header-row {display: flex;align-items: center;justify-content: space-between;gap: 24px;margin-top: 36px;margin-bottom: 16px;}
-  .core-header-text {flex: 1;}
-  .core-header-text h2 {margin-top: 0;}
-  .core-header-image {flex: 1;max-width: 380px;}
-  .core-header-image img {width: 100%;height: 180px;object-fit: cover;border-radius: 12px;display: block;box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);}
+  /* 6B 核心價值區塊：標題在上方，下方改為「左蜂巢、右照片」並排 */
+  .core-section {
+    margin-top: 40px;
+  }
+  .core-header {
+    margin-bottom: 20px;
+  }
+  .core-header h2 {
+    margin-top: 0;
+    margin-bottom: 8px;
+  }
+  .core-header p {
+    margin: 0;
+  }
+  .core-content-row {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+  }
+  .core-honey-wrap {
+    flex: 1.1;
+  }
+  .core-honey-wrap .honey {
+    margin: 0; /* 清除原本可能有的上下外距，方便與右側圖片對齊 */
+  }
+  .core-side-image {
+    flex: 1;
+  }
+  .core-side-image img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
 
-/* 手機版自動改為上下堆疊，避免畫面太擠 */
+  /* 手機版自動改為上下堆疊，避免畫面太擠 */
   @media (max-width: 768px) {
-  .feature-row,.feature-row.reverse,
-  .core-header-row {flex-direction: column;gap: 16px;}
-  .core-header-image {max-width: 100%;width: 100%;}
-  .feature-image img {height: 220px;}}
-
+    .feature-row,
+    .feature-row.reverse,
+    .core-content-row {
+      flex-direction: column;
+      gap: 16px;
+    }
+    .feature-image,
+    .core-honey-wrap,
+    .core-side-image {
+      width: 100%;
+    }
+    .feature-image img,
+    .core-side-image img {
+      height: 220px;
+    }
+  }
 </style>
 </head>
 <body>
@@ -39,7 +100,7 @@
   <h1>認識 Bee Kids</h1>
   <p class="lead">一個讓孩子被愛、被教導，也學習服事的地方。</p>
 
-  <!-- 區塊 1：左文右圖 -->
+  <!-- 區塊 1：左文右圖（照片頂端與標題切齊） -->
   <section class="feature-row">
     <div class="feature-text">
       <h2>我們的異象</h2>
@@ -51,7 +112,7 @@
     </div>
   </section>
 
-  <!-- 區塊 2：左圖右文（加上 reverse 類別） -->
+  <!-- 區塊 2：左圖右文（照片頂端與標題切齊） -->
   <section class="feature-row reverse">
     <div class="feature-text">
       <h2>老師怎麼陪伴孩子</h2>
@@ -67,25 +128,27 @@
     </div>
   </section>
 
-  <!-- 區塊 3：6B 核心價值（標題與圖片並排，下方保留完整的六角形蜂巢結構） -->
+  <!-- 區塊 3：6B 核心價值（上方標題說明，下方左蜂巢、右照片並排） -->
   <section class="core-section">
-    <div class="core-header-row">
-      <div class="core-header-text">
-        <h2>6B 核心價值</h2>
-        <p>培養孩子活出教會 6B 核心價值，在日常生活中實踐信仰、成為祝福。</p>
-      </div>
-      <div class="core-header-image">
-        <img src="../assets/img/6B.jpg" alt="孩子們在活動中實踐 6B 核心價值">
-      </div>
+    <div class="core-header">
+      <h2>6B 核心價值</h2>
+      <p>培養孩子活出教會 6B 核心價值，在日常生活中實踐信仰、成為祝福。</p>
     </div>
 
-    <div class="honey" role="list">
-      <div class="hex" role="listitem"><b>信靠耶穌</b><span>Believing in Jesus</span></div>
-      <div class="hex" role="listitem"><b>歡迎回家</b><span>Belonging to family</span></div>
-      <div class="hex" role="listitem"><b>成為領袖</b><span>Becoming a leader</span></div>
-      <div class="hex" role="listitem"><b>為敬拜而生</b><span>Born to worship</span></div>
-      <div class="hex" role="listitem"><b>帶來盼望</b><span>Bringing people hope</span></div>
-      <div class="hex" role="listitem"><b>建造神國</b><span>Building God’s kingdom</span></div>
+    <div class="core-content-row">
+      <div class="core-honey-wrap">
+        <div class="honey" role="list">
+          <div class="hex" role="listitem"><b>信靠耶穌</b><span>Believing in Jesus</span></div>
+          <div class="hex" role="listitem"><b>歡迎回家</b><span>Belonging to family</span></div>
+          <div class="hex" role="listitem"><b>成為領袖</b><span>Becoming a leader</span></div>
+          <div class="hex" role="listitem"><b>為敬拜而生</b><span>Born to worship</span></div>
+          <div class="hex" role="listitem"><b>帶來盼望</b><span>Bringing people hope</span></div>
+          <div class="hex" role="listitem"><b>建造神國</b><span>Building God’s kingdom</span></div>
+        </div>
+      </div>
+      <div class="core-side-image">
+        <img src="../assets/img/6B.jpg" alt="孩子們在活動中實踐 6B 核心價值">
+      </div>
     </div>
   </section>
 

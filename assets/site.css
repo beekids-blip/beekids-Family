@@ -487,3 +487,33 @@ a.al-cover:hover img{transform:scale(1.04)}
 .al-tag {font-size: .75rem;/* #標籤縮小 */}
 .al-body .btn {padding: 5px 12px;/* 「查看相簿」按鈕縮小 */font-size: .82rem;}
 .al-soon {font-size: .78rem;/* 「相簿整理中」縮小 */}}
+
+/* =========================================================
+   修正：首頁「異象」與「精彩活動」手機版排版
+   ========================================================= */
+
+/* 1. 修正異象 LOGO 尺寸比例（原本 170% 容易溢出） */
+.split-logo img {width: 160px;max-width: 100%;height: auto;aspect-ratio: 1 / 1;object-fit: contain; /* 若 LOGO 周圍有文字，contain 才不會切到邊緣 */}
+
+@media (max-width: 760px) {/* 異象區塊改為上下排列，留出呼吸空間 */
+.split.has-logo.two {flex-direction: column;gap: 16px;}
+.split-logo img {width: 120px;}
+.split-text {width: 100%;padding: 20px 18px;line-height: 1.85;}
+/* 手機版隱藏強制斷行，讓文字自然排版 */
+.split-text .pc-br {display: none;}
+
+/* 2. 修正精彩活動輪播：手機版改為「上圖下文」單欄 */
+.ev-slide {grid-template-columns: minmax(0, 1fr) !important;}
+.ev-slide figure {min-height: 0;aspect-ratio: 16 / 9;}
+.ev-slide img {width: 100%;height: 100%;object-fit: cover;}
+.ev-body {padding: 18px 18px 42px;}
+
+/* 解除單行截斷，讓活動標題與資訊在手機上完整顯示、正常換行 */
+.ev-body h3,
+.ev-s,
+.ev-body .facts dd {white-space: normal !important;overflow: visible !important;text-overflow: clip !important;}
+.ev-body h3 {font-size: 1.15rem;line-height: 1.4;}
+.ev-body .facts {grid-template-columns: max-content 1fr;gap: 4px 12px;font-size: 0.9rem;}
+
+/* 左右切換按鈕對齊 16:9 圖片的垂直正中央 */
+.ev-nav-btn {top: calc((100vw - 32px) * 9 / 32);}}

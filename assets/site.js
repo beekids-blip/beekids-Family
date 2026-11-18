@@ -12,6 +12,7 @@
     { t: '主日學資訊', p: 'parents/info.html' },
     { t: '家長須知', p: 'parents/faq.html' },
     { t: '精彩活動', p: 'parents/events.html' },
+    { t: '活動紀錄', p: 'parents/records.html' },
   ];
   
 

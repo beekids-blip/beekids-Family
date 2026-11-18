@@ -449,7 +449,7 @@ h1,h2,h3{word-break:auto-phrase;text-wrap:balance}
 /* ---------- 活動紀錄（相簿卡片） ---------- */
 .al-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
 .al-card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 3px 12px rgba(20,53,40,.07)}
-.al-cover{position:relative;display:block;aspect-ratio:16/10;background:linear-gradient(135deg,var(--honey-soft),#fff);overflow:hidden}
+.al-cover{position:relative;display:block;aspect-ratio:1/1;background:linear-gradient(135deg,var(--honey-soft),#fff);overflow:hidden}
 .al-cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .3s}
 a.al-cover:hover img{transform:scale(1.04)}
 .al-ph{position:absolute;inset:0;display:grid;place-items:center;font:700 1.6rem Fredoka,sans-serif;color:var(--honey)}

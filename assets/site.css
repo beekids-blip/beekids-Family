@@ -460,3 +460,16 @@ a.al-cover:hover img{transform:scale(1.04)}
 .al-body .btn{margin-top:auto;padding:7px 18px;font-size:.92rem}
 .al-body .btn:hover{background:var(--garden);border-color:var(--garden);color:#fff}
 .al-soon{margin-top:auto;font-size:.88rem;color:var(--muted)}
+
+/* ---------- 活動紀錄：標籤與篩選 ---------- */
+.al-filter{display:flex;flex-wrap:wrap;gap:8px;margin:1.2rem 0 .6rem}
+.al-filter button{padding:5px 14px;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--garden);font:inherit;font-size:.92rem;font-weight:500;cursor:pointer}
+.al-filter button small{margin-left:.45em;color:var(--muted);font-size:.8em}
+.al-filter button:hover{border-color:var(--honey);background:var(--honey-soft)}
+.al-filter button[aria-pressed="true"]{background:var(--garden);border-color:var(--garden);color:#fff}
+.al-filter button[aria-pressed="true"] small{color:#cfe0d6}
+.al-tags{display:flex;flex-wrap:wrap;gap:2px 10px;margin:0;padding:0!important;list-style:none}
+.al-tags li{margin:0}
+.al-tag{padding:0;border:0;background:none;color:var(--leaf);font:inherit;font-size:.82rem;cursor:pointer}
+.al-tag:hover{text-decoration:underline}
+.al-card[hidden],.al-year[hidden]{display:none}

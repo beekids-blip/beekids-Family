@@ -76,8 +76,19 @@
       2020/12/13 | 回到未來 |  | ../assets/img/BeeKids_白底.jpg |  | #聖誕BeeDay
       2020/07/28 | 森林尋寶之旅 |  | ../assets/img/EDM/57.png |  | #營會
       2020/01/29 | 超人特攻隊 |  | ../assets/img/BeeKids_白底.jpg | 超人特攻隊 | #營會
-  </script>
+      </script>
 
+      <button type="button" class="to-top" aria-label="回到最上面" title="回到最上面">↑</button>
+      <script>
+      (() => {
+      const b = document.querySelector('.to-top');
+      b.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+      const t = () => b.classList.toggle('show', window.scrollY > 400);
+      addEventListener('scroll', t, { passive: true }); t();
+      })();
+      </script>
+
+  
 </article>
 </main>
 </body>

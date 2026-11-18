@@ -45,7 +45,7 @@
         <h3>${esc(a.title)}</h3>
         ${a.note ? `<p class="al-note">${esc(a.note)}</p>` : ''}
         ${a.tags.length ? `<ul class="al-tags">${a.tags.map(t => `<li><button type="button" class="al-tag" data-tag="${esc(key(t))}">#${esc(t)}</button></li>`).join('')}</ul>` : ''}
-        ${a.link ? `<a class="btn solid" href="${esc(a.link)}" target="_blank" rel="noopener">查看相簿</a>` : '<span class="al-soon"></span>'}
+        ${a.link ? `<a class="btn solid" href="${esc(a.link)}" target="_blank" rel="noopener">活動報名中</a>` : '<span class="al-soon"></span>'}
       </div>
     </article>`;
 

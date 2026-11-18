@@ -9,67 +9,20 @@
 <style>
 
 /* 前兩個圖文區塊：左文右圖 */
-.prose .feature-row {
-display: flex;
-align-items: center;
-gap: 28px;
-margin: 36px 0;
-}
+.prose .feature-row {display: flex;align-items: center;gap: 28px;margin: 36px 0;}
+.prose .feature-row.reverse {flex-direction: row;}
+.prose .feature-text {flex: 1.2;min-width: 0;margin-top: 0 !important;}
 
-/* 取消反轉，兩個區塊統一左文右圖 */
-.prose .feature-row.reverse {
-flex-direction: row;
-}
-
-/* 左側文字 */
-.prose .feature-text {
-flex: 1.2;
-min-width: 0;
-margin-top: 0 !important;
-}
-
-/* 標題 */
-.prose .feature-text h2 {
-margin-top: 0 !important;
-padding-top: 0 !important;
-line-height: 1.3;
-}
-
-/* 右側照片 */
-.prose .feature-image {
-flex: 1;
-min-width: 0;
-margin-top: 0 !important;
-}
-
-/* 照片尺寸統一 */
-.prose .feature-image img {
-width: 100%;
-height: 260px;
-margin: 0 !important;
-object-fit: cover;
-border-radius: 12px;
-display: block;
-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
+.prose .feature-text h2 {margin-top: 0 !important;padding-top: 0 !important;line-height: 1.3;}
+.prose .feature-image {flex: 1;min-width: 0;margin-top: 0 !important;}
+.prose .feature-image img {width: 100%;height: 260px;margin: 0 !important;object-fit: cover;border-radius: 12px;display: block;box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);}
 
 /* 手機版 */
 @media (max-width: 768px) {
 .prose .feature-row,
-.prose .feature-row.reverse {
-flex-direction: column;
-align-items: stretch;
-gap: 16px;
-}
-
-.prose .feature-image {
-width: 100%;
-}
-
-.prose .feature-image img {
-height: 220px;
-}
-}
+.prose .feature-row.reverse {flex-direction: column;align-items: stretch;gap: 16px;}
+.prose .feature-image {width: 100%;}
+.prose .feature-image img {height: 220px;}}
 
   
 /* 偶數區塊反轉方向（變成左圖右文） */
@@ -117,7 +70,7 @@ height: 220px;
       <p>我們希望孩子不只是「來上課」，而是在教會裡有歸屬感，認識耶穌，並把所學帶回家庭與生活。</p>
     </div>
     <div class="feature-image">
-      <img src="../assets/img/learn.jpg" alt="孩子在教會學習並建立歸屬感">
+      <img src="../assets/img/about/about_learn.jpg" alt="孩子在教會學習並建立歸屬感">
     </div>
   </section>
 
@@ -133,7 +86,7 @@ height: 220px;
       </ul>
     </div>
     <div class="feature-image">
-      <img src="../assets/img/kids.jpg" alt="老師像教練一樣陪伴孩子">
+      <img src="../assets/img/about/about_kids.jpg" alt="老師像教練一樣陪伴孩子">
     </div>
   </section>
 
@@ -156,7 +109,7 @@ height: 220px;
         </div>
       </div>
       <div class="core-side-image">
-        <img src="../assets/img/6B.jpg" alt="孩子們在活動中實踐 6B 核心價值">
+        <img src="../assets/img/about/about_6B.jpg" alt="孩子們在活動中實踐 6B 核心價值">
       </div>
     </div>
   </section>

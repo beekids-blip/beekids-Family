@@ -3,488 +3,480 @@
    功能：載入 Fredoka（英文標題、LOGO、數字）與 Noto Sans TC（中文內文）
    頁面：全站
    ========================================================== */
-@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&family=Noto+Sans+TC:wght@400;500;700;900&display=swap");
+   @import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&family=Noto+Sans+TC:wght@400;500;700;900&display=swap");
 
 /* ==========================================================
    【全域設定】
    功能：色彩變數（--honey 蜜蜂黃、--garden 深綠…）、盒模型、內文字體、連結樣式
    頁面：全站
    ========================================================== */
-:root{
-  --honey:#F5B700; --honey-soft:#FFF1BF; --garden:#1E4D3B; --garden-deep:#143528; --leaf:#2F6B52;
-  --ink:#22302A; --muted:#5B6B62; --paper:#FBFDF8; --mist:#EDF4E8; --line:#D8E3D2;
-  --hw:125px; --head:64px;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:calc(var(--head) + 20px)}
-body{margin:0;font:400 1rem/1.85 "Noto Sans TC",system-ui,-apple-system,"Microsoft JhengHei",sans-serif;color:var(--ink);background:var(--paper)}
-a{color:var(--leaf);text-underline-offset:3px}
-a:focus-visible,button:focus-visible{outline:3px solid var(--honey);outline-offset:2px}
+   :root{
+     --honey:#F5B700; --honey-soft:#FFF1BF; --garden:#1E4D3B; --garden-deep:#143528; --leaf:#2F6B52;
+     --ink:#22302A; --muted:#5B6B62; --paper:#FBFDF8; --mist:#EDF4E8; --line:#D8E3D2;
+     --hw:125px; --head:64px;
+   }
+   *{box-sizing:border-box}
+   html{scroll-behavior:smooth;scroll-padding-top:calc(var(--head) + 20px)}
+   body{margin:0;font:400 1rem/1.85 "Noto Sans TC",system-ui,-apple-system,"Microsoft JhengHei",sans-serif;color:var(--ink);background:var(--paper)}
+   a{color:var(--leaf);text-underline-offset:3px}
+   a:focus-visible,button:focus-visible{outline:3px solid var(--honey);outline-offset:2px}
 /* ==========================================================
    【跳到主要內容】
    功能：無障礙連結，平常看不到，鍵盤 Tab 才會出現
    頁面：全站（site.js 自動產生）
    ========================================================== */
-.skip{position:absolute;left:-999px;top:8px}
-.skip:focus{left:8px;background:#fff;padding:8px 12px;z-index:100}
+   .skip{position:absolute;left:-999px;top:8px}
+   .skip:focus{left:8px;background:#fff;padding:8px 12px;z-index:100}
 
 /* ==========================================================
    【頁首與主選單】
    功能：桌機：橫向選單＋下拉子選單；手機：選單按鈕（手機版規則在後面的 @media 900px）
    頁面：全站（site.js 自動產生）
    ========================================================== */
-.site-header{position:sticky;top:0;z-index:50;background:var(--garden);color:#fff;height:var(--head)}
-.bar{max-width:1120px;height:100%;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:24px}
-.brand{display:flex;align-items:center;gap:10px;color:var(--honey);text-decoration:none;font:700 1.45rem/1 Fredoka,sans-serif}
-.brand img{height:40px;width:auto}
-.site-header nav{margin-left:auto}
-.site-header nav ul{list-style:none;margin:0;padding:0}
-.site-header nav>ul{display:flex;gap:2px}
-.site-header a{color:#fff;text-decoration:none}
-.site-header nav>ul>li{position:relative}
-.site-header nav>ul>li>a{display:block;padding:21px 14px;font-weight:500;border-bottom:3px solid transparent}
-.site-header nav>ul>li:hover>a,.site-header nav>ul>li.on>a,.site-header a[aria-current]{border-bottom-color:var(--honey)}
-.sub{display:none;position:absolute;left:0;top:100%;min-width:220px;background:#fff;border:1px solid var(--line);border-top:3px solid var(--honey);box-shadow:0 10px 24px rgba(20,53,40,.18);padding:8px 0}
-.has-sub:hover>.sub,.has-sub:focus-within>.sub{display:block}
-.sub a{display:block;color:var(--ink);padding:6px 18px;font-size:.95rem}
-.sub a:hover{background:var(--honey-soft)}
-.sub a[aria-current]{font-weight:700;background:var(--honey-soft)}
-.sub .grp>a{font-weight:700;color:var(--garden)}
-.sub .grp ul a{padding-left:34px;font-size:.9rem;color:var(--muted)}
-.menu-btn{display:none;margin-left:auto;background:none;border:1px solid rgba(255,255,255,.5);color:#fff;border-radius:8px;padding:6px 14px;font:inherit;cursor:pointer}
+   .site-header{position:sticky;top:0;z-index:50;background:var(--garden);color:#fff;height:var(--head)}
+   .bar{max-width:1120px;height:100%;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:24px}
+   .brand{display:flex;align-items:center;gap:10px;color:var(--honey);text-decoration:none;font:700 1.45rem/1 Fredoka,sans-serif}
+   .brand img{height:40px;width:auto}
+   .site-header nav{margin-left:auto}
+   .site-header nav ul{list-style:none;margin:0;padding:0}
+   .site-header nav>ul{display:flex;gap:2px}
+   .site-header a{color:#fff;text-decoration:none}
+   .site-header nav>ul>li{position:relative}
+   .site-header nav>ul>li>a{display:block;padding:21px 14px;font-weight:500;border-bottom:3px solid transparent}
+   .site-header nav>ul>li:hover>a,.site-header nav>ul>li.on>a,.site-header a[aria-current]{border-bottom-color:var(--honey)}
+   .sub{display:none;position:absolute;left:0;top:100%;min-width:220px;background:#fff;border:1px solid var(--line);border-top:3px solid var(--honey);box-shadow:0 10px 24px rgba(20,53,40,.18);padding:8px 0}
+   .has-sub:hover>.sub,.has-sub:focus-within>.sub{display:block}
+   .sub a{display:block;color:var(--ink);padding:6px 18px;font-size:.95rem}
+   .sub a:hover{background:var(--honey-soft)}
+   .sub a[aria-current]{font-weight:700;background:var(--honey-soft)}
+   .sub .grp>a{font-weight:700;color:var(--garden)}
+   .sub .grp ul a{padding-left:34px;font-size:.9rem;color:var(--muted)}
+   .menu-btn{display:none;margin-left:auto;background:none;border:1px solid rgba(255,255,255,.5);color:#fff;border-radius:8px;padding:6px 14px;font:inherit;cursor:pointer}
 
 /* ==========================================================
    【Hero 大圖區】
    功能：深綠蜂巢底圖＋標題＋照片，兩欄排版；按鈕 .btn 也定義在這裡
    頁面：首頁 index.html、關於我們 meet-index.html、精彩活動 events-index.html
    ========================================================== */
-.hero{background:var(--garden) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100'%3E%3Cpath d='M28 66L0 50V16L28 0l28 16v34zM28 100V66M28 0v34L0 50v34l28 16 28-16V50z' fill='none' stroke='%23F5B700' stroke-opacity='.2'/%3E%3C/svg%3E");color:#fff}
-.hero-in{max-width:1120px;margin:0 auto;padding:96px 24px 88px;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
-.hero-photo{margin:0}
-.hero-photo img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:16px;border:4px solid var(--honey)}
-.hero h1{margin:0 0 20px;font:700 clamp(3.2rem,9vw,6rem)/1 Fredoka,sans-serif;color:var(--honey);letter-spacing:.01em}
-.hero p{margin:0 0 32px;max-width:26em;font-size:clamp(1.15rem,2.4vw,1.5rem);line-height:1.7}
-.btns{display:flex;flex-wrap:wrap;gap:16px}
-.btn{display:inline-block;padding:11px 24px;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid var(--honey)}
-.btn.solid{background:var(--honey);color:var(--garden-deep)}
-.btn.line{color:#fff}
-.btn:hover{background:#fff;border-color:#fff;color:var(--garden-deep)}
+   .hero{background:var(--garden) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100'%3E%3Cpath d='M28 66L0 50V16L28 0l28 16v34zM28 100V66M28 0v34L0 50v34l28 16 28-16V50z' fill='none' stroke='%23F5B700' stroke-opacity='.2'/%3E%3C/svg%3E");color:#fff}
+   .hero-in{max-width:1120px;margin:0 auto;padding:96px 24px 88px;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+   .hero-photo{margin:0}
+   .hero-photo img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:16px;border:4px solid var(--honey)}
+   .hero h1{margin:0 0 20px;font:700 clamp(3.2rem,9vw,6rem)/1 Fredoka,sans-serif;color:var(--honey);letter-spacing:.01em}
+   .hero p{margin:0 0 32px;max-width:26em;font-size:clamp(1.15rem,2.4vw,1.5rem);line-height:1.7}
+   .btns{display:flex;flex-wrap:wrap;gap:16px}
+   .btn{display:inline-block;padding:11px 24px;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid var(--honey)}
+   .btn.solid{background:var(--honey);color:var(--garden-deep)}
+   .btn.line{color:#fff}
+   .btn:hover{background:#fff;border-color:#fff;color:var(--garden-deep)}
 
 /* ==========================================================
    【頁面版面與基本文字】
    功能：主內容欄寬、標題 h1–h3、導言 .lead、清單、麵包屑 .crumbs
    頁面：全站（.no-toc／.solo 控制是否有目錄欄）
    ========================================================== */
-.page{max-width:1120px;margin:0 auto;padding:40px 24px 88px;display:grid;grid-template-columns:minmax(0,1fr) 220px;gap:48px}
-.page.solo{grid-template-columns:minmax(0,1fr)}
-.page.no-toc{grid-template-columns:minmax(0,52rem);justify-content:center}
-.prose{max-width:46rem}
-.prose.wide{max-width:none}
-.home .prose{max-width:52rem}
-.crumbs{font-size:.88rem;color:var(--muted);margin-bottom:8px}
-.crumbs a{color:var(--muted)}
-.crumbs span{margin:0 6px}
-h1{font-size:2.3rem;line-height:1.3;font-weight:900;margin:0 0 .6em;color:var(--garden)}
-h2{font-size:1.7rem;line-height:1.4;font-weight:900;margin:3.2rem 0 1rem;padding-bottom:.4rem;border-bottom:3px solid var(--honey);color:var(--garden)}
-h2:first-child{margin-top:0}
-h2 small,h3 small{font-size:.8rem;font-weight:400;color:#777;margin-left:.8em}
-h3{font-size:1.25rem;font-weight:700;margin:2.2rem 0 .6rem;color:var(--leaf)}
-.lead{font-size:1.15rem;color:var(--muted)}
-.prose ul,.prose ol{padding-left:1.4em}
-.prose li{margin:.35em 0}
-.prose li::marker{color:var(--honey);font-weight:700}
-.prose ol>li::marker{color:var(--leaf)}
+   .page{max-width:1120px;margin:0 auto;padding:40px 24px 88px;display:grid;grid-template-columns:minmax(0,1fr) 220px;gap:48px}
+   .page.solo{grid-template-columns:minmax(0,1fr)}
+   .page.no-toc{grid-template-columns:minmax(0,52rem);justify-content:center}
+   .prose{max-width:46rem}
+   .prose.wide{max-width:none}
+   .home .prose{max-width:52rem}
+   .crumbs{font-size:.88rem;color:var(--muted);margin-bottom:8px}
+   .crumbs a{color:var(--muted)}
+   .crumbs span{margin:0 6px}
+   h1{font-size:2.3rem;line-height:1.3;font-weight:900;margin:0 0 .6em;color:var(--garden)}
+   h2{font-size:1.7rem;line-height:1.4;font-weight:900;margin:3.2rem 0 1rem;padding-bottom:.4rem;border-bottom:3px solid var(--honey);color:var(--garden)}
+   h2:first-child{margin-top:0}
+   h2 small,h3 small{font-size:.8rem;font-weight:400;color:#777;margin-left:.8em}
+   h3{font-size:1.25rem;font-weight:700;margin:2.2rem 0 .6rem;color:var(--leaf)}
+   .lead{font-size:1.15rem;color:var(--muted)}
+   .prose ul,.prose ol{padding-left:1.4em}
+   .prose li{margin:.35em 0}
+   .prose li::marker{color:var(--honey);font-weight:700}
+   .prose ol>li::marker{color:var(--leaf)}
 
 /* ==========================================================
    【提示框 .callout】
    功能：淡黃底的提示訊息
    頁面：albums.js 在「沒有活動紀錄」時顯示（finished.html）
    ========================================================== */
-.callout{background:var(--honey-soft);border-left:6px solid var(--honey);padding:14px 20px;margin:1.6rem 0;border-radius:0 8px 8px 0}
-.callout p{margin:.3em 0}
+   .callout{background:var(--honey-soft);border-left:6px solid var(--honey);padding:14px 20px;margin:1.6rem 0;border-radius:0 8px 8px 0}
+   .callout p{margin:.3em 0}
+
 /* ==========================================================
    【金句 .quote】
    功能：加粗的深綠色引言
    頁面：認識 Bee Kids about.html
    ========================================================== */
-.quote{font-size:1.2rem;font-weight:700;color:var(--garden);margin:1rem 0}
+   .quote{font-size:1.2rem;font-weight:700;color:var(--garden);margin:1rem 0}
+
 /* ==========================================================
    【步驟卡片 .steps】
    功能：有編號圓圈的橫向步驟
    頁面：主日學資訊 info.html「第一次來，怎麼進行」
    ========================================================== */
-.steps{list-style:none;padding:0!important;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;counter-reset:s;margin:1rem 0 1.6rem}
-.steps li{counter-increment:s;background:var(--mist);border-radius:10px;padding:14px 16px;margin:0;font-weight:500}
-.steps li::before{content:counter(s);display:grid;place-items:center;width:28px;height:28px;margin-bottom:6px;border-radius:50%;background:var(--honey);color:var(--garden-deep);font:700 .95rem/1 Fredoka,sans-serif}
+   .steps{list-style:none;padding:0!important;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;counter-reset:s;margin:1rem 0 1.6rem}
+   .steps li{counter-increment:s;background:var(--mist);border-radius:10px;padding:14px 16px;margin:0;font-weight:500}
+   .steps li::before{content:counter(s);display:grid;place-items:center;width:28px;height:28px;margin-bottom:6px;border-radius:50%;background:var(--honey);color:var(--garden-deep);font:700 .95rem/1 Fredoka,sans-serif}
+
 /* ==========================================================
    【連結清單 .links】
    功能：基本版是直式清單；.links.row 是三個並排方塊
    頁面：首頁 index.html「基本資訊」旁的三個連結
    ========================================================== */
-.links{list-style:none;padding:0!important;margin:1rem 0}
-.links li{margin:0;border-bottom:1px solid var(--line)}
-.links a{display:flex;justify-content:space-between;gap:16px;padding:12px 4px;text-decoration:none;font-weight:500}
-.links a:hover{background:var(--honey-soft)}
-.links small{color:var(--muted);font-weight:400}
-.links.row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.links.row li{border:1px solid var(--line);border-radius:10px;background:#fff}
-.links.row a{flex-direction:column;justify-content:center;gap:2px;padding:16px 18px;height:100%;border-radius:10px}
+   .links{list-style:none;padding:0!important;margin:1rem 0}
+   .links li{margin:0;border-bottom:1px solid var(--line)}
+   .links a{display:flex;justify-content:space-between;gap:16px;padding:12px 4px;text-decoration:none;font-weight:500}
+   .links a:hover{background:var(--honey-soft)}
+   .links small{color:var(--muted);font-weight:400}
+   .links.row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+   .links.row li{border:1px solid var(--line);border-radius:10px;background:#fff}
+   .links.row a{flex-direction:column;justify-content:center;gap:2px;padding:16px 18px;height:100%;border-radius:10px}
 
 /* ==========================================================
    【異象區 .split】
    功能：左邊圓形 LOGO、右邊黃底文字
    頁面：首頁 index.html「Bee Kids 的異象」
    ========================================================== */
-.split{display:flex;justify-content:center;align-items:center;gap:32px;margin:1.2rem 0}
-.split>*{margin:0!important;border-radius:12px}
-.split-logo{display:flex;align-items:center;justify-content:center;padding:8px}
-.split-logo img{width:160px;max-width:100%;height:auto;aspect-ratio:1/1;object-fit:contain;border-radius:50%;border:3px solid var(--honey);background:#fff}
-.split-text{display:flex;align-items:center;justify-content:center;text-align:center;background:var(--honey-soft);padding:28px 36px;border-radius:12px}
-.split-text p{margin:0}
+   .split{display:flex;justify-content:center;align-items:center;gap:32px;margin:1.2rem 0}
+   .split>*{margin:0!important;border-radius:12px}
+   .split-logo{display:flex;align-items:center;justify-content:center;padding:8px}
+   .split-logo img{width:160px;max-width:100%;height:auto;aspect-ratio:1/1;object-fit:contain;border-radius:50%;border:3px solid var(--honey);background:#fff}
+   .split-text{display:flex;align-items:center;justify-content:center;text-align:center;background:var(--honey-soft);padding:28px 36px;border-radius:12px}
+   .split-text p{margin:0}
 
 /* ==========================================================
    【子頁卡片 .cards／.card】
    功能：site.js 的 data-children 會自動產生；.card 基本款也給分班卡片用
    頁面：關於我們 meet-index.html、精彩活動 events-index.html
    ========================================================== */
-.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin:1.4rem 0}
-.card{display:block;padding:16px 20px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink);text-decoration:none}
-.card:hover{border-color:var(--honey);background:var(--honey-soft)}
-.cards .card{display:flex;flex-direction:column;justify-content:center;gap:.45rem;padding:1.15rem 1.35rem}
-.cards .card b{display:block;font-size:1.15rem;color:#1d432e}
-.cards .card span{font-size:.9rem;color:#555;line-height:1.5;font-weight:normal}
+   .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin:1.4rem 0}
+   .card{display:block;padding:16px 20px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink);text-decoration:none}
+   .card:hover{border-color:var(--honey);background:var(--honey-soft)}
+   .cards .card{display:flex;flex-direction:column;justify-content:center;gap:.45rem;padding:1.15rem 1.35rem}
+   .cards .card b{display:block;font-size:1.15rem;color:#1d432e}
+   .cards .card span{font-size:.9rem;color:#555;line-height:1.5;font-weight:normal}
 
 /* ==========================================================
    【資訊清單 .facts】
    功能：左項目名稱、右內容的 dl 兩欄
    頁面：首頁 index.html、info.html、ongoing.html、首頁輪播卡片
    ========================================================== */
-.facts{display:grid;grid-template-columns:max-content 1fr;gap:6px 24px;margin:1rem 0}
-.facts dt{font-weight:700;color:var(--garden)}
-.facts dd{margin:0}
+   .facts{display:grid;grid-template-columns:max-content 1fr;gap:6px 24px;margin:1rem 0}
+   .facts dt{font-weight:700;color:var(--garden)}
+   .facts dd{margin:0}
 
 /* ==========================================================
    【6B 蜂巢六邊形】
    功能：六個六邊形蜂巢排列（手機版縮放規則在後面）
    頁面：認識 Bee Kids about.html「6B 核心價值」
    ========================================================== */
-.honey{--g:6px;display:grid;grid-template-columns:repeat(3,var(--hw));gap:var(--g);width:max-content;margin:2rem auto 3rem;padding-right:calc(var(--hw)/2)}
-.hex{width:var(--hw);height:calc(var(--hw)*1.1547);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 12px;background:var(--honey);color:var(--garden-deep)}
-.hex:nth-child(even){background:var(--garden);color:#fff}
-.hex:nth-child(n+4){margin-top:calc(var(--hw)*-.2887);transform:translateX(calc(var(--hw)/2 + var(--g)/2))}
-.hex b{font-size:.9rem;font-weight:900;line-height:1.3}
-.hex span{font:500 .68rem/1.3 Fredoka,sans-serif;margin-top:4px}
+   .honey{--g:6px;display:grid;grid-template-columns:repeat(3,var(--hw));gap:var(--g);width:max-content;margin:2rem auto 3rem;padding-right:calc(var(--hw)/2)}
+   .hex{width:var(--hw);height:calc(var(--hw)*1.1547);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 12px;background:var(--honey);color:var(--garden-deep)}
+   .hex:nth-child(even){background:var(--garden);color:#fff}
+   .hex:nth-child(n+4){margin-top:calc(var(--hw)*-.2887);transform:translateX(calc(var(--hw)/2 + var(--g)/2))}
+   .hex b{font-size:.9rem;font-weight:900;line-height:1.3}
+   .hex span{font:500 .68rem/1.3 Fredoka,sans-serif;margin-top:4px}
 
 /* ==========================================================
    【本頁目錄 .toc】
    功能：site.js 在沒有 no-toc 且 h2 ≥ 3 個時才產生；目前沒有頁面會觸發
    頁面：目前無（預留給之後的長頁面）
    ========================================================== */
-.toc{position:sticky;top:calc(var(--head) + 24px);align-self:start;font-size:.9rem;border-left:2px solid var(--line);padding-left:16px}
-.toc b{display:block;margin-bottom:6px;color:var(--garden)}
-.toc a{display:block;padding:3px 0;color:var(--muted);text-decoration:none}
-.toc a.on{color:var(--garden);font-weight:700}
+   .toc{position:sticky;top:calc(var(--head) + 24px);align-self:start;font-size:.9rem;border-left:2px solid var(--line);padding-left:16px}
+   .toc b{display:block;margin-bottom:6px;color:var(--garden)}
+   .toc a{display:block;padding:3px 0;color:var(--muted);text-decoration:none}
+   .toc a.on{color:var(--garden);font-weight:700}
 
 /* ==========================================================
    【頁尾】
    功能：聯絡 email 與團隊名稱
    頁面：全站（site.js 自動產生）
    ========================================================== */
-.site-footer{background:var(--garden-deep);color:#cfe0d6;padding:32px 24px;font-size:.9rem}
-.site-footer div{max-width:1120px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px}
-.site-footer a{color:var(--honey)}
+   .site-footer{background:var(--garden-deep);color:#cfe0d6;padding:32px 24px;font-size:.9rem}
+   .site-footer div{max-width:1120px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px}
+   .site-footer a{color:var(--honey)}
 
 /* ==========================================================
    【響應式：版面與選單（1000px／900px／760px）】
    功能：平板縮成單欄、隱藏目錄；900px 以下變手機選單且只顯示第一層；760px 以下 hero 與 h1 縮小
    頁面：全站
    ========================================================== */
-@media (max-width:1000px){
-  .page{grid-template-columns:minmax(0,1fr)}
-  .toc{display:none}
-}
-@media (max-width:900px){
-  .menu-btn{display:block}
-  .site-header nav{display:none;position:absolute;left:0;right:0;top:var(--head);margin:0;background:var(--garden);max-height:calc(100vh - var(--head));overflow:auto;padding:8px 24px 20px}
-  .site-header nav.open{display:block}
-  .site-header nav>ul{flex-direction:column}
-  .site-header nav>ul>li>a{padding:12px 0}
-  /* 手機選單只顯示第一層；子頁從「關於我們／精彩活動」頁的卡片進入 */
-  .has-sub>.sub,.has-sub:hover>.sub,.has-sub:focus-within>.sub{display:none}
-}
-@media (max-width:760px){
-  h1{font-size:1.9rem}
-  .hero-in{padding:64px 24px 56px;grid-template-columns:1fr;gap:32px}
-}
+   @media (max-width:1000px){
+     .page{grid-template-columns:minmax(0,1fr)}
+     .toc{display:none}}
+   @media (max-width:900px){
+     .menu-btn{display:block}
+     .site-header nav{display:none;position:absolute;left:0;right:0;top:var(--head);margin:0;background:var(--garden);max-height:calc(100vh - var(--head));overflow:auto;padding:8px 24px 20px}
+     .site-header nav.open{display:block}
+     .site-header nav>ul{flex-direction:column}
+     .site-header nav>ul>li>a{padding:12px 0}
+     /* 手機選單只顯示第一層；子頁從「關於我們／精彩活動」頁的卡片進入 */
+     .has-sub>.sub,.has-sub:hover>.sub,.has-sub:focus-within>.sub{display:none}}
+   @media (max-width:760px){
+     h1{font-size:1.9rem}
+     .hero-in{padding:64px 24px 56px;grid-template-columns:1fr;gap:32px}}
 /* ==========================================================
    【減少動態】
    功能：使用者系統設定「減少動態」時，關閉平滑捲動
    頁面：全站
    ========================================================== */
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+   @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 
 /* ==========================================================
    【手機版共用調整（760px 以下）】
    功能：標題間距、資訊清單、連結方塊、頁尾改成適合小螢幕
    頁面：全站（.links.row 主要是首頁）
    ========================================================== */
-@media (max-width:760px){
-  h2{margin:4.4rem 0 .3rem}   /* 確認：4.4rem 偏大，且 560px 以下又變 2.4rem */
-  h2 + *{margin-top:.3rem!important}
-  h1+h2{margin-top:2rem}
-  .facts{grid-template-columns:max-content 1fr;gap:6px 14px;font-size:.95rem}
-  .links.row{grid-template-columns:1fr 1fr;gap:8px}
-  .links.row li:first-child{grid-column:1/-1}
-  .links.row a{padding:10px 12px;font-size:.95rem}
-  .links.row small{font-size:.75rem}
-  .site-footer div{flex-direction:column;align-items:center;text-align:center;gap:4px}
-}
+   @media (max-width:760px){
+     h2{margin:4.4rem 0 .3rem}   /* 確認：4.4rem 偏大，且 560px 以下又變 2.4rem */
+     h2 + *{margin-top:.3rem!important}
+     h1+h2{margin-top:2rem}
+     .facts{grid-template-columns:max-content 1fr;gap:6px 14px;font-size:.95rem}
+     .links.row{grid-template-columns:1fr 1fr;gap:8px}
+     .links.row li:first-child{grid-column:1/-1}
+     .links.row a{padding:10px 12px;font-size:.95rem}
+     .links.row small{font-size:.75rem}
+     .site-footer div{flex-direction:column;align-items:center;text-align:center;gap:4px}}
 
 /* ==========================================================
    【手機版 Hero 撐滿畫面】
    功能：讓 hero 佔滿一個手機螢幕高度並置中
    頁面：首頁、meet-index.html、events-index.html
    ========================================================== */
-@media (max-width:760px){
-  .hero{min-height:calc(100vh - var(--head));min-height:calc(100svh - var(--head));display:grid;align-content:center}
-  .hero-in{width:100%}
-}
+   @media (max-width:760px){
+     .hero{min-height:calc(100vh - var(--head));min-height:calc(100svh - var(--head));display:grid;align-content:center}
+     .hero-in{width:100%}}
 
 /* ==========================================================
    【手機版六宮格】
    功能：蜂巢依螢幕寬度縮放，維持六邊形
    頁面：認識 Bee Kids about.html
    ========================================================== */
-@media (max-width:760px){
-  :root{--hw:calc((100vw - 60px) / 3.5)}
-  .honey{margin:1.5rem auto 2rem;padding:0 calc(var(--hw)/2) 0 0}
-  .hex{padding:0 6px}
-  .hex b{font-size:.8rem}
-  .hex span{font-size:.6rem;margin-top:2px}
-}
+   @media (max-width:760px){
+     :root{--hw:calc((100vw - 60px) / 3.5)}
+     .honey{margin:1.5rem auto 2rem;padding:0 calc(var(--hw)/2) 0 0}
+     .hex{padding:0 6px}
+     .hex b{font-size:.8rem}
+     .hex span{font-size:.6rem;margin-top:2px}}
 
 /* ==========================================================
    【分班卡片 .class-cards】
    功能：幼兒班／小學班兩欄並排，手機改單欄
    頁面：主日學資訊 info.html
    ========================================================== */
-.class-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin:1.4rem 0}
-.class-cards .card{padding:24px 26px;border-top:5px solid var(--honey);border-radius:12px;box-shadow:0 2px 8px rgba(20,53,40,.06)}
-.class-cards .card:hover{border-color:var(--line);border-top-color:var(--honey);background:#fff}
-.class-cards .card h3{margin:0 0 .3rem;font-size:1.35rem;color:var(--garden)}
-.class-cards .age{display:inline-block;margin:0 0 .8rem;padding:2px 14px;border-radius:999px;background:var(--honey-soft);color:var(--garden-deep);font-weight:700;font-size:.95rem}
-.class-cards .desc{margin:0;color:var(--ink);line-height:1.8}
-@media (max-width:640px){.class-cards{grid-template-columns:1fr}}
+   .class-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin:1.4rem 0}
+   .class-cards .card{padding:24px 26px;border-top:5px solid var(--honey);border-radius:12px;box-shadow:0 2px 8px rgba(20,53,40,.06)}
+   .class-cards .card:hover{border-color:var(--line);border-top-color:var(--honey);background:#fff}
+   .class-cards .card h3{margin:0 0 .3rem;font-size:1.35rem;color:var(--garden)}
+   .class-cards .age{display:inline-block;margin:0 0 .8rem;padding:2px 14px;border-radius:999px;background:var(--honey-soft);color:var(--garden-deep);font-weight:700;font-size:.95rem}
+   .class-cards .desc{margin:0;color:var(--ink);line-height:1.8}
+   @media (max-width:640px){.class-cards{grid-template-columns:1fr}}
 
 /* ==========================================================
    【精彩活動頁 ongoing.html】
    功能：頂部黏住的快捷按鈕、活動大卡 .ev-sec、主視覺、標籤、費用方塊。首頁輪播會讀取 .ev-sec 的結構，改 HTML 時請保留 .ev-tag、.ev-hero img、.ev-sub、.facts
    頁面：精彩活動 ongoing.html（結構同時被首頁輪播使用）
    ========================================================== */
-.ev-nav{position:sticky;top:var(--head);z-index:5;display:flex;gap:10px;flex-wrap:wrap;margin:1rem 0 2rem;padding:10px 0;background:var(--paper)}
-.ev-nav a{display:inline-flex;flex-direction:column;padding:8px 18px;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--garden);font-weight:700;text-decoration:none;line-height:1.3}
-.ev-nav a:hover{border-color:var(--honey);background:var(--honey-soft)}
-.ev-sec{scroll-margin-top:50px;margin:0 0 2.5rem;padding:0 30px 30px;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 4px 16px rgba(20,53,40,.08);overflow:hidden}  /* 原 130px 會和 html 的 scroll-padding 疊加 */
-.ev-hero{position:relative;aspect-ratio:16/9;margin:0 -30px 1.4rem;overflow:hidden;background:linear-gradient(135deg,var(--honey-soft),#fff);border-bottom:1px solid var(--line);display:grid;place-items:center;color:var(--muted)}
-.ev-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.ev-tag{display:table;margin:1.2rem auto .6rem;padding:2px 12px;border-radius:999px;background:var(--honey);color:#3b2a10;font-weight:700;font-size:.85rem}
-.ev-sec h2{margin-top:0;margin-bottom:.6rem;padding-bottom:0;border-bottom:0}
-.ev-sec h2 span{display:inline-block}
-.ev-sec h2 .ev-sub{display:block;margin-top:.15em;font-size:.78em;color:var(--leaf)}
-.ev-price{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:1rem 0}
-.ev-price div{padding:14px 18px;border-radius:10px;background:var(--honey-soft);text-align:center}
-.ev-price b{display:block;font-size:1.6rem;color:var(--garden)}
-@media (max-width:480px){.ev-price{grid-template-columns:1fr}}
-@media (max-width:560px){.ev-sec{padding:0 18px 22px}.ev-hero{margin:0 -18px 1.2rem}}
+   .ev-nav{position:sticky;top:var(--head);z-index:5;display:flex;gap:10px;flex-wrap:wrap;margin:1rem 0 2rem;padding:10px 0;background:var(--paper)}
+   .ev-nav a{display:inline-flex;flex-direction:column;padding:8px 18px;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--garden);font-weight:700;text-decoration:none;line-height:1.3}
+   .ev-nav a:hover{border-color:var(--honey);background:var(--honey-soft)}
+   .ev-sec{scroll-margin-top:50px;margin:0 0 2.5rem;padding:0 30px 30px;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 4px 16px rgba(20,53,40,.08);overflow:hidden}  /* 原 130px 會和 html 的 scroll-padding 疊加 */
+   .ev-hero{position:relative;aspect-ratio:16/9;margin:0 -30px 1.4rem;overflow:hidden;background:linear-gradient(135deg,var(--honey-soft),#fff);border-bottom:1px solid var(--line);display:grid;place-items:center;color:var(--muted)}
+   .ev-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+   .ev-tag{display:table;margin:1.2rem auto .6rem;padding:2px 12px;border-radius:999px;background:var(--honey);color:#3b2a10;font-weight:700;font-size:.85rem}
+   .ev-sec h2{margin-top:0;margin-bottom:.6rem;padding-bottom:0;border-bottom:0}
+   .ev-sec h2 span{display:inline-block}
+   .ev-sec h2 .ev-sub{display:block;margin-top:.15em;font-size:.78em;color:var(--leaf)}
+   .ev-price{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:1rem 0}
+   .ev-price div{padding:14px 18px;border-radius:10px;background:var(--honey-soft);text-align:center}
+   .ev-price b{display:block;font-size:1.6rem;color:var(--garden)}
+   @media (max-width:480px){.ev-price{grid-template-columns:1fr}}
+   @media (max-width:560px){.ev-sec{padding:0 18px 22px}.ev-hero{margin:0 -18px 1.2rem}}
 
 /* ==========================================================
    【回到最上面按鈕】
    功能：右下角圓形按鈕，捲動超過 400px 才顯示（.show 由頁面內的 script 切換）
    頁面：ongoing.html、finished.html
    ========================================================== */
-.to-top{position:fixed;right:18px;bottom:18px;z-index:20;width:46px;height:46px;border:0;border-radius:50%;background:var(--honey);color:#3b2a10;font-size:1.3rem;font-weight:700;cursor:pointer;box-shadow:0 3px 10px rgba(0,0,0,.2);opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .25s,transform .25s,visibility .25s}
-.to-top.show{opacity:1;visibility:visible;transform:none}
-.to-top:hover{background:var(--garden);color:#fff}
+   .to-top{position:fixed;right:18px;bottom:18px;z-index:20;width:46px;height:46px;border:0;border-radius:50%;background:var(--honey);color:#3b2a10;font-size:1.3rem;font-weight:700;cursor:pointer;box-shadow:0 3px 10px rgba(0,0,0,.2);opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .25s,transform .25s,visibility .25s}
+   .to-top.show{opacity:1;visibility:visible;transform:none}
+   .to-top:hover{background:var(--garden);color:#fff}
 
 /* ==========================================================
    【中文換行優化】
    功能：避免中文單字落單、標題平衡斷行、按鈕不換行
    頁面：全站
    ========================================================== */
-p,li,dd,dt,.lead,.quote{word-break:auto-phrase;text-wrap:pretty}
-h1,h2,h3{word-break:auto-phrase;text-wrap:balance}
-.btn,.ev-nav a{white-space:nowrap}
+   p,li,dd,dt,.lead,.quote{word-break:auto-phrase;text-wrap:pretty}
+   h1,h2,h3{word-break:auto-phrase;text-wrap:balance}
+   .btn,.ev-nav a{white-space:nowrap}
 
 /* ==========================================================
    【手機版字級（560px 以下）】
    功能：整體字體、標題、頁面留白、卡片內距縮小
    頁面：全站（含 ongoing.html、info.html 分班卡片）
    ========================================================== */
-@media (max-width:560px){
-  body{font-size:.94rem;line-height:1.75}
-  .page{padding:28px 16px 80px}
-  h1{font-size:1.6rem}
-  h2{font-size:1.3rem;margin-top:2.4rem}
-  h3{font-size:1.08rem;margin-top:1.8rem}
-  h2 small,h3 small{display:block;margin:.2em 0 0}
-  .lead{font-size:1rem}
-  .quote{font-size:1.05rem}
-  .ev-price b{font-size:1.4rem}
-  .class-cards .card{padding:20px}
-  .ev-nav a{padding:6px 14px;font-size:.92rem}
-}
+   @media (max-width:560px){
+     body{font-size:.94rem;line-height:1.75}
+     .page{padding:28px 16px 80px}
+     h1{font-size:1.6rem}
+     h2{font-size:1.3rem;margin-top:2.4rem}
+     h3{font-size:1.08rem;margin-top:1.8rem}
+     h2 small,h3 small{display:block;margin:.2em 0 0}
+     .lead{font-size:1rem}
+     .quote{font-size:1.05rem}
+     .ev-price b{font-size:1.4rem}
+     .class-cards .card{padding:20px}
+     .ev-nav a{padding:6px 14px;font-size:.92rem}}
 
 /* ==========================================================
    【按鈕並排 .btn-group】
    功能：報名按鈕橫排，手機第一顆獨佔一行
    頁面：精彩活動 ongoing.html（寒假營會報名）
    ========================================================== */
-.btn-group{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
-.btn-group .btn{flex:1 1 0;min-width:max-content;text-align:center}
-@media (max-width:640px){.btn-group .btn:first-child{flex:1 1 100%}}
+   .btn-group{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+   .btn-group .btn{flex:1 1 0;min-width:max-content;text-align:center}
+   @media (max-width:640px){.btn-group .btn:first-child{flex:1 1 100%}}
 
 /* ==========================================================
    【首頁「基本資訊」＋連結方塊】
    功能：左邊基本資訊、右邊三個連結，手機改單欄
    頁面：首頁 index.html
    ========================================================== */
-.info-split{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 32px;align-items:start;margin:1.4rem 0}
-.info-split h3{margin:0 0 .5rem;font-size:1.1rem}
-.info-split .facts{margin:0;gap:8px 14px}
-.info-split .nw{white-space:nowrap}
-.info-split .links.row{margin:0;grid-template-columns:1fr;gap:8px}
-.info-split .links.row a{flex-direction:row;align-items:baseline;justify-content:space-between;gap:12px;padding:8px 14px;height:auto;white-space:nowrap;font-size:.95rem}
-.info-split .links.row small{font-size:.8rem}
-@media (max-width:760px){
-  .info-split{grid-template-columns:1fr}
-  .info-split .links.row{grid-template-columns:1fr 1fr;gap:8px}
-  .info-split .links.row a{flex-direction:column;align-items:flex-start;gap:2px;white-space:normal;padding:10px 12px}
-}
+   .info-split{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 32px;align-items:start;margin:1.4rem 0}
+   .info-split h3{margin:0 0 .5rem;font-size:1.1rem}
+   .info-split .facts{margin:0;gap:8px 14px}
+   .info-split .nw{white-space:nowrap}
+   .info-split .links.row{margin:0;grid-template-columns:1fr;gap:8px}
+   .info-split .links.row a{flex-direction:row;align-items:baseline;justify-content:space-between;gap:12px;padding:8px 14px;height:auto;white-space:nowrap;font-size:.95rem}
+   .info-split .links.row small{font-size:.8rem}
+   @media (max-width:760px){
+     .info-split{grid-template-columns:1fr}
+     .info-split .links.row{grid-template-columns:1fr 1fr;gap:8px}
+     .info-split .links.row a{flex-direction:column;align-items:flex-start;gap:2px;white-space:normal;padding:10px 12px}}
 
 /* ==========================================================
    【首頁活動輪播】
    功能：可左右滑動的活動卡、前後按鈕、圓點；資料來自 ongoing.html。手機版改上圖下文，並解除文字截斷
    頁面：首頁 index.html（events-carousel.js 產生）
    ========================================================== */
-.ev-car{position:relative;margin:1.2rem 0 .6rem}
-.ev-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;border-radius:16px;border:1px solid var(--line);background:#fff}
-.ev-track::-webkit-scrollbar{display:none}
-.ev-slide{flex:0 0 100%;scroll-snap-align:start;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);color:var(--ink);text-decoration:none}
-.ev-slide figure{margin:0;background:var(--mist);min-height:220px}
-.ev-slide img{display:block;width:100%;height:100%;aspect-ratio:16/9;object-fit:cover}
-.ev-body{min-width:0;padding:28px 32px 44px;display:flex;flex-direction:column;justify-content:center;gap:6px}
-.ev-chip{align-self:flex-start;background:var(--honey);color:var(--garden-deep);font-weight:700;font-size:.8rem;line-height:1;padding:6px 12px;border-radius:999px}
-.ev-body h3{margin:.3rem 0 0;font-size:1.35rem;line-height:1.4;color:var(--garden)}
-.ev-s{margin:0;color:var(--muted);font-weight:500}
-.ev-body .facts{grid-template-columns:max-content minmax(0,1fr);margin:.6rem 0 0;font-size:.95rem;gap:2px 16px}
-.ev-body .facts dt{white-space:nowrap}
-/* 內容太長不換行，超出用 … 截斷（手機版在下方解除） */
-.ev-body h3,.ev-s,.ev-body .facts dd{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.ev-go{margin-top:.6rem;font-weight:700;color:var(--leaf)}
-.ev-slide:hover .ev-go{text-decoration:underline}
-.ev-nav-btn{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border:0;border-radius:50%;background:rgba(255,255,255,.92);color:var(--garden);font-size:1.6rem;line-height:1;cursor:pointer;box-shadow:0 2px 8px rgba(20,53,40,.25)}
-.ev-nav-btn:hover{background:var(--honey)}
-.ev-nav-btn.prev{left:10px}.ev-nav-btn.next{right:10px}
-.ev-dots{position:absolute;right:20px;bottom:12px;display:flex;gap:8px}
-.ev-dots button{width:10px;height:10px;padding:0;border:0;border-radius:50%;background:var(--line);cursor:pointer}
-.ev-dots button[aria-current="true"]{background:var(--honey);width:24px;border-radius:999px}
-.ev-more{text-align:right;margin:.4rem 0 0}
-@media (max-width:760px){
-  .ev-slide{grid-template-columns:minmax(0,1fr)}
-  .ev-slide figure{min-height:0;aspect-ratio:16/9}
-  .ev-body{padding:18px 18px 42px}
-  .ev-body h3,.ev-s,.ev-body .facts dd{white-space:normal;overflow:visible;text-overflow:clip}
-  .ev-body h3{font-size:1.15rem}
-  .ev-body .facts{grid-template-columns:max-content 1fr;gap:4px 12px;font-size:.9rem}
-  .ev-nav-btn{top:calc((100vw - 48px) * 9 / 32)}   /* 按鈕貼在 16:9 圖片垂直正中間（頁面左右留白 24px） */
-  .ev-dots{left:20px;right:auto}
-}
-@media (max-width:560px){
-  .ev-nav-btn{top:calc((100vw - 32px) * 9 / 32)}   /* 頁面左右留白 16px */
-}
+   .ev-car{position:relative;margin:1.2rem 0 .6rem}
+   .ev-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;border-radius:16px;border:1px solid var(--line);background:#fff}
+   .ev-track::-webkit-scrollbar{display:none}
+   .ev-slide{flex:0 0 100%;scroll-snap-align:start;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);color:var(--ink);text-decoration:none}
+   .ev-slide figure{margin:0;background:var(--mist);min-height:220px}
+   .ev-slide img{display:block;width:100%;height:100%;aspect-ratio:16/9;object-fit:cover}
+   .ev-body{min-width:0;padding:28px 32px 44px;display:flex;flex-direction:column;justify-content:center;gap:6px}
+   .ev-chip{align-self:flex-start;background:var(--honey);color:var(--garden-deep);font-weight:700;font-size:.8rem;line-height:1;padding:6px 12px;border-radius:999px}
+   .ev-body h3{margin:.3rem 0 0;font-size:1.35rem;line-height:1.4;color:var(--garden)}
+   .ev-s{margin:0;color:var(--muted);font-weight:500}
+   .ev-body .facts{grid-template-columns:max-content minmax(0,1fr);margin:.6rem 0 0;font-size:.95rem;gap:2px 16px}
+   .ev-body .facts dt{white-space:nowrap}
+   /* 內容太長不換行，超出用 … 截斷（手機版在下方解除） */
+   .ev-body h3,.ev-s,.ev-body .facts dd{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+   .ev-go{margin-top:.6rem;font-weight:700;color:var(--leaf)}
+   .ev-slide:hover .ev-go{text-decoration:underline}
+   .ev-nav-btn{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border:0;border-radius:50%;background:rgba(255,255,255,.92);color:var(--garden);font-size:1.6rem;line-height:1;cursor:pointer;box-shadow:0 2px 8px rgba(20,53,40,.25)}
+   .ev-nav-btn:hover{background:var(--honey)}
+   .ev-nav-btn.prev{left:10px}.ev-nav-btn.next{right:10px}
+   .ev-dots{position:absolute;right:20px;bottom:12px;display:flex;gap:8px}
+   .ev-dots button{width:10px;height:10px;padding:0;border:0;border-radius:50%;background:var(--line);cursor:pointer}
+   .ev-dots button[aria-current="true"]{background:var(--honey);width:24px;border-radius:999px}
+   .ev-more{text-align:right;margin:.4rem 0 0}
+   @media (max-width:760px){
+     .ev-slide{grid-template-columns:minmax(0,1fr)}
+     .ev-slide figure{min-height:0;aspect-ratio:16/9}
+     .ev-body{padding:18px 18px 42px}
+     .ev-body h3,.ev-s,.ev-body .facts dd{white-space:normal;overflow:visible;text-overflow:clip}
+     .ev-body h3{font-size:1.15rem}
+     .ev-body .facts{grid-template-columns:max-content 1fr;gap:4px 12px;font-size:.9rem}
+     .ev-nav-btn{top:calc((100vw - 48px) * 9 / 32)}   /* 按鈕貼在 16:9 圖片垂直正中間（頁面左右留白 24px） */
+     .ev-dots{left:20px;right:auto}
+   }
+   @media (max-width:560px){
+     .ev-nav-btn{top:calc((100vw - 32px) * 9 / 32)}   /* 頁面左右留白 16px */
+   }
 
 /* ==========================================================
    【基本資訊＋地圖並排】
    功能：左邊 dl 資訊、右邊地圖圖片，手機改上下排列
    頁面：主日學資訊 info.html
    ========================================================== */
-.info-with-photo{display:flex;align-items:center;gap:20px}
-.info-photo{width:220px;aspect-ratio:4/3;border-radius:12px;flex-shrink:0}
-@media (max-width:600px){
-  .info-with-photo{flex-direction:column;align-items:stretch}
-  .info-photo{width:100%}
-}
+   .info-with-photo{display:flex;align-items:center;gap:20px}
+   .info-photo{width:220px;aspect-ratio:4/3;border-radius:12px;flex-shrink:0}
+   @media (max-width:600px){
+     .info-with-photo{flex-direction:column;align-items:stretch}
+     .info-photo{width:100%}}
 
 /* ==========================================================
    【活動紀錄相簿卡片】
    功能：依年份分組的卡片格、封面、日期、標題、標籤、查看按鈕
    頁面：活動紀錄 finished.html（albums.js 產生）
    ========================================================== */
-.al-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
-.al-card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 3px 12px rgba(20,53,40,.07)}
-.al-cover{position:relative;display:block;aspect-ratio:1/1;background:linear-gradient(135deg,var(--honey-soft),#fff);overflow:hidden}
-.al-cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .3s}
-a.al-cover:hover img{transform:scale(1.04)}
-.al-ph{position:absolute;inset:0;display:grid;place-items:center;font:700 1.6rem Fredoka,sans-serif;color:var(--honey)}
-.al-body{display:flex;flex-direction:column;align-items:flex-start;gap:.35rem;padding:14px 18px 18px;flex:1}
-.al-date{margin:0;font-size:.85rem;color:var(--muted);font-variant-numeric:tabular-nums}
-.al-body h3{margin:0;font-size:1.1rem;line-height:1.4;color:var(--garden)}
-.al-note{margin:0;font-size:.9rem;color:var(--muted)}
-.al-body .btn{margin-top:auto;padding:7px 18px;font-size:.92rem}
-.al-body .btn:hover{background:var(--garden);border-color:var(--garden);color:#fff}
-.al-soon{margin-top:auto;font-size:.88rem;color:var(--muted)}
-.al-year{margin-top:3.5rem}
+   .al-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
+   .al-card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 3px 12px rgba(20,53,40,.07)}
+   .al-cover{position:relative;display:block;aspect-ratio:1/1;background:linear-gradient(135deg,var(--honey-soft),#fff);overflow:hidden}
+   .al-cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .3s}
+   a.al-cover:hover img{transform:scale(1.04)}
+   .al-ph{position:absolute;inset:0;display:grid;place-items:center;font:700 1.6rem Fredoka,sans-serif;color:var(--honey)}
+   .al-body{display:flex;flex-direction:column;align-items:flex-start;gap:.35rem;padding:14px 18px 18px;flex:1}
+   .al-date{margin:0;font-size:.85rem;color:var(--muted);font-variant-numeric:tabular-nums}
+   .al-body h3{margin:0;font-size:1.1rem;line-height:1.4;color:var(--garden)}
+   .al-note{margin:0;font-size:.9rem;color:var(--muted)}
+   .al-body .btn{margin-top:auto;padding:7px 18px;font-size:.92rem}
+   .al-body .btn:hover{background:var(--garden);border-color:var(--garden);color:#fff}
+   .al-soon{margin-top:auto;font-size:.88rem;color:var(--muted)}
+   .al-year{margin-top:3.5rem}
 
 /* ==========================================================
    【活動紀錄：標籤篩選】
    功能：上方篩選按鈕與卡片上的 #標籤；.al-card[hidden] 用來隱藏被篩掉的卡片
    頁面：活動紀錄 finished.html（albums.js 產生）
    ========================================================== */
-.al-filter{display:flex;flex-wrap:wrap;gap:8px;margin:1.2rem 0 .6rem}
-.al-filter button{padding:5px 14px;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--garden);font:inherit;font-size:.92rem;font-weight:500;cursor:pointer}
-.al-filter button small{margin-left:.45em;color:var(--muted);font-size:.8em}
-.al-filter button:hover{border-color:var(--honey);background:var(--honey-soft)}
-.al-filter button[aria-pressed="true"]{background:var(--garden);border-color:var(--garden);color:#fff}
-.al-filter button[aria-pressed="true"] small{color:#cfe0d6}
-.al-tags{display:flex;flex-wrap:wrap;gap:2px 10px;margin:0;padding:0!important;list-style:none}
-.al-tags li{margin:0}
-.al-tag{padding:0;border:0;background:none;color:var(--leaf);font:inherit;font-size:.82rem;cursor:pointer}
-.al-tag:hover{text-decoration:underline}
-.al-card[hidden],.al-year[hidden]{display:none}
+   .al-filter{display:flex;flex-wrap:wrap;gap:8px;margin:1.2rem 0 .6rem}
+   .al-filter button{padding:5px 14px;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--garden);font:inherit;font-size:.92rem;font-weight:500;cursor:pointer}
+   .al-filter button small{margin-left:.45em;color:var(--muted);font-size:.8em}
+   .al-filter button:hover{border-color:var(--honey);background:var(--honey-soft)}
+   .al-filter button[aria-pressed="true"]{background:var(--garden);border-color:var(--garden);color:#fff}
+   .al-filter button[aria-pressed="true"] small{color:#cfe0d6}
+   .al-tags{display:flex;flex-wrap:wrap;gap:2px 10px;margin:0;padding:0!important;list-style:none}
+   .al-tags li{margin:0}
+   .al-tag{padding:0;border:0;background:none;color:var(--leaf);font:inherit;font-size:.82rem;cursor:pointer}
+   .al-tag:hover{text-decoration:underline}
+   .al-card[hidden],.al-year[hidden]{display:none}
 
 /* ==========================================================
    【活動紀錄手機版（600px 以下）】
    功能：卡片改兩張並排、字體與內距縮小
    頁面：活動紀錄 finished.html
    ========================================================== */
-@media (max-width:600px){
-  .al-grid{grid-template-columns:repeat(2,1fr);gap:10px}
-  .al-card{border-radius:10px}
-  .al-body{padding:10px 10px 12px;gap:.25rem}
-  .al-date{font-size:.75rem}
-  .al-body h3{font-size:.95rem;line-height:1.3}
-  .al-note{font-size:.8rem}
-  .al-tag{font-size:.75rem}
-  .al-body .btn{padding:5px 12px;font-size:.82rem}
-  .al-soon{font-size:.78rem}
-}
+   @media (max-width:600px){
+     .al-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+     .al-card{border-radius:10px}
+     .al-body{padding:10px 10px 12px;gap:.25rem}
+     .al-date{font-size:.75rem}
+     .al-body h3{font-size:.95rem;line-height:1.3}
+     .al-note{font-size:.8rem}
+     .al-tag{font-size:.75rem}
+     .al-body .btn{padding:5px 12px;font-size:.82rem}
+     .al-soon{font-size:.78rem} }
 
 /* ==========================================================
    【首頁異象區手機版】
    功能：LOGO 與文字改上下排列；.pc-br 用來在手機取消強制換行
    頁面：首頁 index.html
    ========================================================== */
-@media (max-width:760px){
-  .split{flex-direction:column;gap:16px}
-  .split-logo img{width:120px}
-  .split-text{width:100%;padding:20px 18px;line-height:1.85}
-  .split-text .pc-br{display:none}   /* 要生效：把異象文字裡的 <br> 改成 <br class="pc-br"> */
-}
+   @media (max-width:760px){
+     .split{flex-direction:column;gap:16px}
+     .split-logo img{width:120px}
+     .split-text{width:100%;padding:20px 18px;line-height:1.85}
+     .split-text .pc-br{display:none}   /* 要生效：把異象文字裡的 <br> 改成 <br class="pc-br"> */}
 
 /* ==========================================================
    【子頁 Hero 字級】
    功能：非首頁的 hero 標題與內文縮小，避免跟首頁一樣大
    頁面：meet-index.html、events-index.html
    ========================================================== */
-body:not(.home) .hero-text h1{font-size:clamp(1.8rem,3vw,2.4rem)}
-body:not(.home) .hero-text p{font-size:1rem}
+   body:not(.home) .hero-text h1{font-size:clamp(1.8rem,3vw,2.4rem)}
+   body:not(.home) .hero-text p{font-size:1rem}

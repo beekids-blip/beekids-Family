@@ -534,3 +534,8 @@ a.al-cover:hover img{transform:scale(1.04)}
 
 /* 左右切換按鈕對齊 16:9 圖片的垂直正中央 */
 .ev-nav-btn {top: calc((100vw - 32px) * 9 / 32);}}
+
+
+/* 讓分頁（非首頁）的 hero 標題與內文字體稍微縮小，避免跟首頁一樣巨大 */
+body:not(.home) .hero-text h1 {  font-size: clamp(1.8rem, 3vw, 2.4rem); /* 可依需求調整數字，首頁通常在 3rem 以上 */}
+body:not(.home) .hero-text p {  font-size: 1rem;}

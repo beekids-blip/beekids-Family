@@ -9,12 +9,12 @@
   const NAV = [
     { t: '首頁', p: 'index.html' },
     { t: '關於我們', p: 'parents/meet/meet-index.html', c: [
-      { t: '認識 Bee Kids', p: 'parents/meet/about.html' },
-      { t: '主日學資訊', p: 'parents/meet/info.html' },]},
+      { t: '認識 Bee Kids', p: 'parents/meet/about.html' , d: '我們的異象、教學理念與師資團隊介紹。' },
+      { t: '主日學資訊', p: 'parents/meet/info.html' , d: '查看聚會時間、分齡班級、接送流程與注意事項。 }]},
     { t: '家長須知', p: 'parents/rules.html' },
     { t: '精彩活動', p: 'parents/events/events-index.html' , c: [
-      { t: '現正熱映', p: 'parents/events/ongoing.html' },
-      { t: '活動紀錄', p: 'parents/events/finished.html' }]}
+      { t: '現正熱映', p: 'parents/events/ongoing.html', d: '近期營會、節慶活動與線上報名資訊。' },
+      { t: '活動紀錄', p: 'parents/events/finished.html' , d: '歷年活動花絮、照片集錦與孩子成長點滴。'}]}
   ];
   
 

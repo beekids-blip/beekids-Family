@@ -54,6 +54,19 @@ code{background:var(--mist);padding:.1em .4em;border-radius:4px;font-size:.9em}
 .hero-photo{margin:0}
 .hero-photo img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:16px;border:4px solid var(--honey)}
 
+/* ── 子頁面專用的精簡 Hero 樣式（不影響首頁） ── */
+.hero.hero-sub {padding-top: 2rem;padding-bottom: 2.5rem;}
+.hero.hero-sub h1 {font-size: clamp(1.75rem, 3vw, 2.25rem);margin-bottom: 0.75rem;}
+.hero.hero-sub p,
+.hero.hero-sub li {font-size: 0.95rem;line-height: 1.6;}
+.hero.hero-sub ul {margin-top: 0.75rem;margin-bottom: 1.25rem;padding-left: 1.25rem;}
+.hero.hero-sub .cards {gap: 0.75rem;margin-top: 1rem;}
+.hero.hero-sub .card {padding: 0.85rem 1.1rem;border-radius: 12px;font-size: 0.95rem;}
+.hero.hero-sub img {max-height: 280px;width: 100%;object-fit: cover;border-radius: 16px;}
+@media (min-width: 820px) {
+.hero.hero-sub .hero-inner {display: grid;grid-template-columns: 1.35fr 1fr;gap: 2rem;align-items: center;}}
+
+
 /* ---------- Page layout ---------- */
 .page{max-width:1120px;margin:0 auto;padding:40px 24px 88px;display:grid;grid-template-columns:minmax(0,1fr) 220px;gap:48px}
 .page.solo{grid-template-columns:minmax(0,1fr)}
@@ -151,6 +164,10 @@ h3{font-size:1.25rem;font-weight:700;margin:2.2rem 0 .6rem;color:var(--leaf)}
 .sheet-table .c12{position:sticky;left:0;z-index:1;background:var(--mist);color:var(--garden);font-weight:700;text-align:center;vertical-align:middle;border-right:1px solid var(--line)}
 .sheet-table td.stack{vertical-align:top}
 
+/* 白色卡片內的標題與說明文字排版 */
+.cards .card {display: flex;flex-direction: column;justify-content: center;gap: 0.45rem;padding: 1.15rem 1.35rem;text-decoration: none;}
+.cards .card b {font-size: 1.15rem;color: #1d432e; }
+.cards .card span {font-size: 0.9rem;color: #555555;line-height: 1.5;font-weight: normal;}
 
 /* ---------- 6B honeycomb ---------- */
 .honey{--g:6px;display:grid;grid-template-columns:repeat(3,var(--hw));gap:var(--g);width:max-content;margin:2rem auto 3rem;padding-right:calc(var(--hw)/2)}

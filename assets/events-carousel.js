@@ -3,7 +3,7 @@
   const box = document.querySelector('[data-events-carousel]');
   if (!box) return;
   const ROOT = new URL('../', document.currentScript.src);
-  const evUrl = new URL('parents/events.html', ROOT);
+  const evUrl = new URL('parents/events/ongoing.html', ROOT);
   const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
   fetch(evUrl).then(r => r.ok ? r.text() : Promise.reject()).then(html => {

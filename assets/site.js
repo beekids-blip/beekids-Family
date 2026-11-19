@@ -11,7 +11,7 @@
     { t: '關於我們', p: 'parents/meet/meet-index.html', c: [
       { t: '認識 Bee Kids', p: 'parents/meet/about.html' },
       { t: '主日學資訊', p: 'parents/meet/info.html' },]},
-    { t: '家長須知', p: 'parents/rule.html' },
+    { t: '家長須知', p: 'parents/rules.html' },
     { t: '精彩活動', p: 'parents/events/events-index.html' , c: [
       { t: '現正熱映', p: 'parents/events/ongoing.html' },
       { t: '活動紀錄', p: 'parents/events/finished.html' }]}

@@ -9,15 +9,15 @@
   const NAV = [
     { t: '首頁', p: 'index.html' },
     { t: '關於我們', p: 'parents/meet/meet-index.html', c: [
-      { t: '認識 Bee Kids', p: 'parents/meet/about.html' , d: '我們的異象、教學理念與師資團隊介紹。' },
-      { t: '主日學資訊', p: 'parents/meet/info.html' , d: '查看聚會時間、分齡班級、接送流程與注意事項。 }]},
+      { t: '認識 Bee Kids', p: 'parents/meet/about.html', d: '我們的異象、教學理念與師資團隊介紹。' },
+      { t: '主日學資訊', p: 'parents/meet/info.html', d: '查看聚會時間、分齡班級、接送流程與注意事項。' }
+    ]},
     { t: '家長須知', p: 'parents/rules.html' },
-    { t: '精彩活動', p: 'parents/events/events-index.html' , c: [
+    { t: '精彩活動', p: 'parents/events/events-index.html', c: [
       { t: '現正熱映', p: 'parents/events/ongoing.html', d: '近期營會、節慶活動與線上報名資訊。' },
-      { t: '活動紀錄', p: 'parents/events/finished.html' , d: '歷年活動花絮、照片集錦與孩子成長點滴。'}]}
+      { t: '活動紀錄', p: 'parents/events/finished.html', d: '歷年活動花絮、照片集錦與孩子成長點滴。' }
+    ]}
   ];
-  
-
 
   const ROOT = new URL('../', document.currentScript.src);
   const href = p => new URL(p, ROOT).href;
@@ -37,7 +37,7 @@
   const link = n => `<a href="${href(n.p)}"${isCur(n) ? ' aria-current="page"' : ''}>${n.t}</a>`;
 
   // Header
-  const vis = n => (n.c || []).filter(x => !x.hide);          // 只取沒隱藏的子頁
+  const vis = n => (n.c || []).filter(x => !x.hide); // 只取沒隱藏的子頁
   const sub = n => vis(n).length
     ? `<li class="grp">${link(n)}<ul>${vis(n).map(sub).join('')}</ul></li>`
     : `<li>${link(n)}</li>`;
@@ -57,8 +57,8 @@
   // Favicon
   document.head.insertAdjacentHTML('beforeend', `<link rel="icon" href="${href('assets/img/純LOGO_透明.png')}">`);
 
- const main = document.querySelector('main.page') || document.createElement('main');
- const article = main.querySelector('article') || document.createElement('article');
+  const main = document.querySelector('main.page') || document.createElement('main');
+  const article = main.querySelector('article') || document.createElement('article');
 
   // Breadcrumb
   if (trail.length > 1) {
@@ -66,23 +66,19 @@
     article.insertAdjacentHTML('afterbegin', `<nav class="crumbs" aria-label="麵包屑">${crumbs}</nav>`);
   }
 
- // Child page cards: <div data-children></div> (current page) or data-children="root" (all sections)
-document.querySelector('[data-children]');
-  if (grid) {
+  // Child page cards: <div data-children></div> (current page) or data-children="root" (all sections)
+  document.querySelectorAll('[data-children]').forEach(grid => {
     const items = grid.dataset.children === 'root'
-      ? vis(NAV).filter(n => n.p !== 'index.html')
-      : (cur && cur.c ? vis(cur.c) : []);
+      ? NAV.filter(n => n.p !== 'index.html' && !n.hide)
+      : (node && node.c ? vis(node) : []);
     grid.className = 'cards';
     grid.innerHTML = items.map(n => `
-      <a class="card" href="${url(n.p)}">
+      <a class="card" href="${href(n.p)}">
         <b>${n.t}</b>
         ${n.d ? `<span>${n.d}</span>` : ''}
       </a>
     `).join('');
-  }
-  el.className = 'cards';                       // 其他地方：卡片樣式
-  el.innerHTML = list.map(n => `<a class="card" href="${href(n.p)}"><b>${n.t}</b></a>`).join('');
-});
+  });
 
   // In-page TOC
   if (!main.classList.contains('no-toc')) {

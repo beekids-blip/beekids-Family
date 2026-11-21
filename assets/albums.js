@@ -38,7 +38,7 @@
 
   const card = a => `<article class="al-card" data-tags="${esc(a.tags.map(key).join('|'))}">
       ${a.link ? `<a class="al-cover" href="${esc(a.link)}" target="_blank" rel="noopener" aria-label="開啟「${esc(a.title)}」相簿">` : '<div class="al-cover">'}
-        ${a.cover ? `<img src="${esc(a.cover)}" alt="" loading="lazy">` : '<span class="al-ph">Bee Kids</span>'}
+        <img src="${esc(a.cover || 'assets/img/BeeKids_白底.jpg')}" alt="" loading="lazy" onerror="this.onerror=null;this.src='assets/img/BeeKids_白底.jpg';">
       ${a.link ? '</a>' : '</div>'}
       <div class="al-body">
         <p class="al-date">${esc(a.date)}</p>
